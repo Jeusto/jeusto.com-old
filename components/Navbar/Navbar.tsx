@@ -5,7 +5,13 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <Flex mx="1rem" my="1rem" justifyContent="space-between">
+    <Flex
+      w="100%"
+      px="2rem"
+      py="1rem"
+      backgroundColor="background"
+      justifyContent="space-between"
+    >
       <Image layout="fixed" width="45" height="45" alt="tr" src={logo}></Image>
       <Flex>
         <Link href="/" passHref>
