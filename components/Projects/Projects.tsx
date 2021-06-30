@@ -5,7 +5,7 @@ export default function Featured() {
   return (
     <Box id="projects" pt="10rem">
       <Heading fontWeight="700" as="h1" fontSize="display2">
-        {`🌙 Other projects I've done`}
+        {`Other projects I've done`}
       </Heading>
       <Flex>
         <Card

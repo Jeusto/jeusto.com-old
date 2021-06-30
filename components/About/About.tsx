@@ -14,7 +14,7 @@ export default function About() {
     >
       <Box w="55%">
         <Heading fontWeight="700" as="h1" fontSize="display2">
-          ⚡ About me
+          About me
         </Heading>
         <Text fontSize="display3" mt="1rem">
           {`Hey! I'm Arhun Saday, also known as Jeusto. I've been close to a 
@@ -31,7 +31,7 @@ export default function About() {
         useful stuff with code.`}
         </Text>
       </Box>
-      <Box width="22rem" height="22rem" overflow="hidden">
+      <Box width="25rem" height="25rem" overflow="hidden">
         <svg className="defs">
           <defs>
             <clipPath id="squircle" clipPathUnits="objectBoundingBox">

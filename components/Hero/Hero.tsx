@@ -8,7 +8,7 @@ export default function Landing() {
       <Heading fontWeight="700" as="h1" fontSize="display">
         {`Hi. I'm Jeusto.`}
       </Heading>
-      <Heading mt="0.5rem" fontWeight="700" as="h1" fontSize="display">
+      <Heading mt="-1rem" fontWeight="700" as="h1" fontSize="display">
         A developer.
       </Heading>
       <Box fontSize="display3" mt="3rem">

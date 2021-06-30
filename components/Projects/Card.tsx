@@ -108,7 +108,7 @@ export default function Card({
               icon={<FaGithub />}
             />
           </Link>
-          <Link href={demoLink}>
+          <Link href={demoLink} isExternal>
             <IconButton
               bg="transparent"
               fontSize="1.5rem"

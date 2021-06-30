@@ -14,7 +14,7 @@ export default function Navbar() {
       alignItems="center"
       px="7vw"
       py="1.5vw"
-      boxShadow="xl"
+      boxShadow="md"
       background="background"
       pos="fixed"
       right="0"

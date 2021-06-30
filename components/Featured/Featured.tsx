@@ -4,9 +4,11 @@ export default function Featured() {
   return (
     <Box id="featured" pt="10rem">
       <Heading fontWeight="700" as="h1" fontSize="display2">
-        ⭐ Featured project: Silverbug
+        Featured project: Silverbug
       </Heading>
-      <Text>Coming soon...</Text>
+      <Text mt="1rem" fontSize="display3">
+        Coming soon...
+      </Text>
     </Box>
   );
 }

@@ -18,7 +18,7 @@ const colors = {
 };
 const fonts = {
   body: "Inter",
-  heading: "Merriweather",
+  heading: "Abhaya Libre",
 };
 
 // Component styles
@@ -46,7 +46,15 @@ const Link = {
     _hover: { textDecoration: "none" },
   },
 };
-const IconButton = {};
+const IconButton = {
+  baseStyle: {
+    bg: "transparent",
+    _hover: { textDecoration: "none" },
+    _focus: {
+      boxShadow: "0",
+    },
+  },
+};
 
 // Regroup and extend theme
 const overrides = extendTheme({

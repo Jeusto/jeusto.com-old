@@ -32,7 +32,6 @@ const heading = `
 h1 {
   width: 55rem;
   font-size: 64px;
-  letter-spacing: -1px;
   color: #fff;
   background: linear-gradient(
     271deg,
