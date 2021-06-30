@@ -1,15 +1,15 @@
 import type { AppProps } from "next/app";
+import "@fontsource/merriweather";
 import { ChakraProvider } from "@chakra-ui/react";
-import customTheme from "../styles/styles";
-import Global from "../styles/global";
+import customTheme from "../styles/theme";
+import GlobalStyle from "../styles/global";
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Global>
+    <GlobalStyle>
       <ChakraProvider resetCSS theme={customTheme}>
         <Component {...pageProps} />
       </ChakraProvider>
-    </Global>
+    </GlobalStyle>
   );
 }
-export default MyApp;
