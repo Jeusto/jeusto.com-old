@@ -6,6 +6,7 @@ import logo from "/public/logo.svg";
 export default function About() {
   return (
     <Flex
+      id="about"
       flexWrap="wrap"
       mt="10rem"
       justifyContent="space-between"
@@ -15,16 +16,16 @@ export default function About() {
         <Heading fontWeight="700" as="h1" fontSize="display2">
           ⚡ About me
         </Heading>
-        <Text mt="1rem">
+        <Text fontSize="display3" mt="1rem">
           {`Hey! I'm Arhun Saday, also known as Jeusto. I've been close to a 
           computer since an early age, and been passionate about it.`}
         </Text>
-        <Text mt="1rem">
+        <Text fontSize="display3" mt="1rem">
           {`I've been doing graphic design and 3D as a hobby for a few years. Fast forward to today, I
         study computer science and maths at the University of Strasbourg in
         France.`}
         </Text>
-        <Text mt="1rem">
+        <Text fontSize="display3" mt="1rem">
           {`I do programming in various languages and technologies including React, Nextjs, Python, Java and more.
         I try to learn and get better every single day. I especially love building interesting and
         useful stuff with code.`}

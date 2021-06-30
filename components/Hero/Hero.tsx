@@ -18,6 +18,14 @@ export default function Landing() {
         </Text>
       </Box>
       <HStack mt="1rem" spacing="0.75rem">
+        <Link href="mailto:arhunsad@gmail.com" isExternal>
+          <Button
+            fontSize="base"
+            leftIcon={<Icon as={FaEnvelope} w={5} h={5} />}
+          >
+            Email
+          </Button>
+        </Link>
         <Link href="https://github.com/Jeusto" isExternal>
           <Button fontSize="base" leftIcon={<Icon as={FaGithub} w={5} h={5} />}>
             Github
@@ -29,14 +37,6 @@ export default function Landing() {
             leftIcon={<Icon as={FaTwitter} w={5} h={5} />}
           >
             Twitter
-          </Button>
-        </Link>
-        <Link href="mailto:arhunsad@gmail.com" isExternal>
-          <Button
-            fontSize="base"
-            leftIcon={<Icon as={FaEnvelope} w={5} h={5} />}
-          >
-            Email
           </Button>
         </Link>
       </HStack>

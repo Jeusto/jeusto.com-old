@@ -3,7 +3,7 @@ import Card from "./Card";
 
 export default function Featured() {
   return (
-    <Box mt="10rem">
+    <Box id="projects" mt="10rem">
       <Heading fontWeight="700" as="h2" fontSize="display2">
         🎉 Other projects
       </Heading>

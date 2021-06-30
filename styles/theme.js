@@ -1,6 +1,7 @@
 import { theme as chakraTheme } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 
+// Function to calculate fluid font size
 const fluidType = (minFont, maxFont) => {
   let XX = 768 / 100;
   let YY = (100 * (maxFont - minFont)) / (1920 - 768);
@@ -29,12 +30,11 @@ const Button = {
   },
   sizes: {},
   variants: {
-    underline: {},
-    ghost: {
+    underline: {
       bg: "transparent",
-      _hover: { bg: "#1c1c1c" },
+      _hover: {},
       _focus: {
-        boxShadow: "0 0 1px 3px #7d7d7d, 0 1px 1px rgba(0, 0, 0, .15)",
+        boxShadow: "0",
       },
     },
   },
@@ -47,7 +47,7 @@ const Link = {
   },
 };
 
-// Regroup all and extend theme
+// Regroup and extend theme
 const overrides = extendTheme({
   ...chakraTheme,
   colors,
@@ -74,7 +74,7 @@ const overrides = extendTheme({
   styles: {
     global: {
       body: {
-        margin: "0rem 5vw",
+        margin: "0rem 7vw",
         bg: "background",
         color: "textPrimary",
       },

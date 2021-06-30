@@ -1,4 +1,4 @@
-import { Flex, Button, Box, Slide, HStack } from "@chakra-ui/react";
+import { Flex, Button, Box, Slide, HStack, Link } from "@chakra-ui/react";
 import logo from "/public/logo.svg";
 import NextImage from "next/image";
 import NextLink from "next/link";
@@ -8,10 +8,11 @@ const MobileDrawer = () => <></>;
 export default function Navbar() {
   return (
     <Flex
+      zIndex="999"
       flexDirection="row"
       justifyContent="space-between"
       alignItems="center"
-      px="5vw"
+      px="7vw"
       py="1.5vw"
       boxShadow="xl"
       background="background"
@@ -20,7 +21,7 @@ export default function Navbar() {
       top="0"
       left="0"
     >
-      <NextLink href="/" passHref>
+      <NextLink href="/#" passHref>
         <Box cursor="pointer">
           <NextImage
             layout="fixed"
@@ -32,28 +33,26 @@ export default function Navbar() {
         </Box>
       </NextLink>
       <HStack spacing="0.75rem">
-        <NextLink href="/" passHref>
-          <Button variant="ghost" fontSize="base">
-            Home
-          </Button>
-        </NextLink>
-
-        <NextLink href="#about" passHref>
-          <Button variant="ghost" fontSize="base">
+        <Link className="link link--about" href="#about" passHref>
+          <Button variant="underline" fontSize="base">
             About
           </Button>
-        </NextLink>
-
-        <NextLink href="#featured_project" passHref>
-          <Button variant="ghost" fontSize="base">
+        </Link>
+        <Link className="link link--featured" href="#featured" passHref>
+          <Button variant="underline" fontSize="base">
             Featured
           </Button>
-        </NextLink>
-        <NextLink href="#projects" passHref>
-          <Button variant="ghost" fontSize="base">
+        </Link>
+        <Link className="link link--projects" href="#projects" passHref>
+          <Button variant="underline" fontSize="base">
             Projects
           </Button>
-        </NextLink>
+        </Link>
+        <Link className="link  link--contact" href="" passHref>
+          <Button variant="underline" fontSize="base">
+            Contact
+          </Button>
+        </Link>
       </HStack>
     </Flex>
   );
