@@ -2,36 +2,46 @@ import { Box, Heading, Text, Flex } from "@chakra-ui/layout";
 import NextImage from "next/image";
 import me from "/public/me.jpg";
 import logo from "/public/logo.svg";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 export default function About() {
+  const isMediumBreakpoint = useMediaQuery(768);
+
   return (
     <Flex
       id="about"
       flexWrap="wrap"
-      pt="10rem"
       justifyContent="space-between"
       alignItems="center"
+      mt="10rem"
     >
-      <Box w="55%">
-        <Heading fontWeight="700" as="h1" fontSize="display2">
+      <Box
+        w={{ base: "100%", sm: "100%", md: "53%", lg: "63%", xl: "63%" }}
+        maxW="65rem"
+      >
+        <Heading className="gradient_text1" fontSize="display2">
           About me
         </Heading>
         <Text fontSize="display3" mt="1rem">
           {`Hey! I'm Arhun Saday, also known as Jeusto. I've been close to a 
-          computer since an early age, and been passionate about it since then.`}
+            computer since an early age, and been passionate about it since then.`}
         </Text>
         <Text fontSize="display3" mt="1rem">
           {`I've been doing graphic design and 3D modeling as a hobby for a few years. Fast forward to today, I
-        study computer science and maths at the University of Strasbourg in
-        France.`}
+          study computer science and maths at the University of Strasbourg in
+          France.`}
         </Text>
         <Text fontSize="display3" mt="1rem">
           {`I do programming in various languages and technologies including Typescript, React, Nextjs, Python, Java and more.
-        I try to learn and get better every single day. I especially love building interesting and
-        useful stuff with code.`}
+          I try to learn and get better single day. I especially love building interesting and
+          useful stuff with code.`}
         </Text>
       </Box>
-      <Box width="25rem" height="25rem" overflow="hidden">
+      <Box
+        w={{ base: "70%", sm: "70%", md: "45%", lg: "35%", xl: "35%" }}
+        maxW="20rem"
+        margin={isMediumBreakpoint ? "0" : "2rem auto auto auto"}
+      >
         <svg className="defs">
           <defs>
             <clipPath id="squircle" clipPathUnits="objectBoundingBox">

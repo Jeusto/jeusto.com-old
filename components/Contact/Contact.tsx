@@ -36,7 +36,7 @@ export default function Contact() {
         blockScrollOnMount={false}
       >
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent bg="background">
           <ModalHeader>Modal Title</ModalHeader>
           <ModalCloseButton />
           <ModalBody>

@@ -6,6 +6,14 @@ export default function GlobalStyle({ children }) {
     <>
       <Global
         styles={css`
+          html,
+          body {
+            overflow-x: hidden;
+            max-width: 100vw;
+            margin: 0;
+            padding: 0;
+          }
+
           ${scrollbar}
           ${heading}
           ${squircle}
@@ -29,20 +37,42 @@ const scrollbar = `
 `;
 
 const heading = `
-h1 {
-  width: 55rem;
-  font-size: 64px;
+.gradient_heading {
+  width: fit-content;
   color: #fff;
   background: linear-gradient(
     271deg,
-    #a0e9ff 30%,
+    #a0e9ff 5%,
     #a162e8 50%,
     #f093b0 70%,
     #edca85 94%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}`;
+}
+.gradient_text1 {
+  width: fit-content;
+  color: #fff;
+  background: linear-gradient(
+    271deg,
+    #f093b0 0%,
+    #edca85 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient_text2 {
+  width: fit-content;
+  color: #fff;
+  background: linear-gradient(
+    271deg,
+  #a0e9ff 0%,
+  #a162e8 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+`;
 
 const squircle = `
 .defs {
@@ -61,7 +91,6 @@ const navbar_links = `
   font-size: 20px;
   position: relative;
   text-decoration: none;
-  padding-bottom: 8px;
 }
 .link:before,
 .link:after {
@@ -71,7 +100,7 @@ const navbar_links = `
   margin: auto;
   left: 0;
   right: 0;
-  bottom: 5px;
+  bottom: 0px;
   height: 3px;
   background-color: red;
 }

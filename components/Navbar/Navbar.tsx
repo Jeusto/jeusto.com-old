@@ -1,11 +1,79 @@
-import { Flex, Button, Box, Slide, HStack, Link } from "@chakra-ui/react";
+import {
+  Flex,
+  Button,
+  Box,
+  Slide,
+  HStack,
+  VStack,
+  Link,
+  Text,
+  useDisclosure,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
+  Stack,
+  Icon,
+} from "@chakra-ui/react";
 import logo from "/public/logo.svg";
 import NextImage from "next/image";
 import NextLink from "next/link";
-
-const MobileDrawer = () => <></>;
+import React, { useRef } from "react";
+import useMediaQuery from "../../hooks/useMediaQuery";
+import { AiOutlineMenu } from "react-icons/ai";
 
 export default function Navbar() {
+  const isLargerThan768 = useMediaQuery(768);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const MobileNavbar = () => (
+    <>
+      <Drawer isOpen={isOpen} placement="right" size="full" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent bg="background">
+          <DrawerCloseButton />
+          <DrawerHeader mb="2rem"></DrawerHeader>
+          <DrawerBody>
+            <VStack spacing="0.75rem">
+              <Link
+                onClick={onClose}
+                className="link link--about"
+                href="#about"
+                passHref
+              >
+                <Button variant="underline" fontSize="6xl">
+                  About
+                </Button>
+              </Link>
+              <Link
+                onClick={onClose}
+                className="link link--featured"
+                href="#featured"
+                passHref
+              >
+                <Button variant="underline" fontSize="6xl">
+                  Featured
+                </Button>
+              </Link>
+              <Link
+                onClick={onClose}
+                className="link link--projects"
+                href="#projects"
+                passHref
+              >
+                <Button variant="underline" fontSize="6xl">
+                  Projects
+                </Button>
+              </Link>
+            </VStack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </>
+  );
+
   return (
     <Flex
       zIndex="999"
@@ -13,7 +81,7 @@ export default function Navbar() {
       justifyContent="space-between"
       alignItems="center"
       px="7vw"
-      py="1.5vw"
+      py="1vw"
       boxShadow="md"
       background="background"
       pos="fixed"
@@ -22,7 +90,7 @@ export default function Navbar() {
       left="0"
     >
       <NextLink href="/#" passHref>
-        <Box cursor="pointer">
+        <Box pt="0.3rem" cursor="pointer">
           <NextImage
             layout="fixed"
             width="45"
@@ -32,28 +100,39 @@ export default function Navbar() {
           ></NextImage>
         </Box>
       </NextLink>
-      <HStack spacing="0.75rem">
-        <Link className="link link--about" href="#about" passHref>
-          <Button variant="underline" fontSize="base">
-            About
-          </Button>
-        </Link>
-        <Link className="link link--featured" href="#featured" passHref>
-          <Button variant="underline" fontSize="base">
-            Featured
-          </Button>
-        </Link>
-        <Link className="link link--projects" href="#projects" passHref>
-          <Button variant="underline" fontSize="base">
-            Projects
-          </Button>
-        </Link>
-        <Link className="link  link--contact" href="" passHref>
-          <Button variant="underline" fontSize="base">
-            Contact
-          </Button>
-        </Link>
-      </HStack>
+      {isLargerThan768 ? (
+        <HStack spacing="0.75rem">
+          <Link className="link link--about" href="#about" passHref>
+            <Button variant="underline" fontSize="18px">
+              About
+            </Button>
+          </Link>
+          <Link className="link link--featured" href="#featured" passHref>
+            <Button variant="underline" fontSize="18px">
+              Featured
+            </Button>
+          </Link>
+          <Link className="link link--projects" href="#projects" passHref>
+            <Button variant="underline" fontSize="18px">
+              Projects
+            </Button>
+          </Link>
+          <Link className="link  link--contact" href="" passHref>
+            <Button variant="underline" fontSize="18px">
+              Contact
+            </Button>
+          </Link>
+        </HStack>
+      ) : (
+        <Icon
+          as={AiOutlineMenu}
+          cursor="pointer"
+          w={7}
+          h={7}
+          onClick={onOpen}
+        />
+      )}
+      <MobileNavbar />
     </Flex>
   );
 }

@@ -10,6 +10,7 @@ export default function Index() {
   return (
     <>
       <NextHead>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Jeusto - Arhun Saday</title>
         <link rel="icon" href="/favicon.ico" />
       </NextHead>

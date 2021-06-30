@@ -13,9 +13,9 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { FaReact, FaPython, FaJs, FaSass, FaCode } from "react-icons/fa";
+import { FaReact, FaPython, FaSass, FaCode, FaDatabase } from "react-icons/fa";
 import { IoLogoVercel } from "react-icons/io5";
-import { SiTypescript } from "react-icons/si";
+import { SiPhp, SiTypescript, SiJavascript } from "react-icons/si";
 
 type CardProps = {
   imageUrl: string;
@@ -47,7 +47,7 @@ export default function Card({
         break;
       case "Javascript":
         tagValues.color = "yellow";
-        tagValues.icon = FaJs;
+        tagValues.icon = SiJavascript;
         break;
       case "Next.js":
         tagValues.color = "lightgray";
@@ -60,6 +60,14 @@ export default function Card({
       case "Sass":
         tagValues.color = "pink";
         tagValues.icon = FaSass;
+        break;
+      case "Php":
+        tagValues.color = "purple";
+        tagValues.icon = SiPhp;
+        break;
+      case "Sqlite":
+        tagValues.color = "teal";
+        tagValues.icon = FaDatabase;
         break;
       default:
         break;
@@ -87,15 +95,9 @@ export default function Card({
       borderRadius="1rem"
       overflow="hidden"
       flexDirection="column"
-      w="35rem"
+      w={{ sm: "40rem", md: "20rem", lg: "30rem", xl: "40rem" }}
     >
-      <Image
-        width="100%"
-        height="15rem"
-        fit="cover"
-        src={imageUrl}
-        alt=""
-      ></Image>
+      <Image w="100%" h="15rem" fit="cover" src={imageUrl} alt=""></Image>
       <Flex justifyContent="space-between" alignItems="center" p="1rem">
         <Heading size="2xl">{title}</Heading>
         <HStack spacing="0.5rem">
