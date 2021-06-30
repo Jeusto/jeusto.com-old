@@ -46,6 +46,7 @@ const Link = {
     _hover: { textDecoration: "none" },
   },
 };
+const IconButton = {};
 
 // Regroup and extend theme
 const overrides = extendTheme({
@@ -70,7 +71,7 @@ const overrides = extendTheme({
     display2: fluidType(24, 36),
     display3: fluidType(16, 24),
   },
-  components: { Button, Link },
+  components: { Button, Link, IconButton },
   styles: {
     global: {
       body: {

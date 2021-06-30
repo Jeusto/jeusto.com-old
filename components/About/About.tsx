@@ -8,7 +8,7 @@ export default function About() {
     <Flex
       id="about"
       flexWrap="wrap"
-      mt="10rem"
+      pt="10rem"
       justifyContent="space-between"
       alignItems="center"
     >
@@ -18,15 +18,15 @@ export default function About() {
         </Heading>
         <Text fontSize="display3" mt="1rem">
           {`Hey! I'm Arhun Saday, also known as Jeusto. I've been close to a 
-          computer since an early age, and been passionate about it.`}
+          computer since an early age, and been passionate about it since then.`}
         </Text>
         <Text fontSize="display3" mt="1rem">
-          {`I've been doing graphic design and 3D as a hobby for a few years. Fast forward to today, I
+          {`I've been doing graphic design and 3D modeling as a hobby for a few years. Fast forward to today, I
         study computer science and maths at the University of Strasbourg in
         France.`}
         </Text>
         <Text fontSize="display3" mt="1rem">
-          {`I do programming in various languages and technologies including React, Nextjs, Python, Java and more.
+          {`I do programming in various languages and technologies including Typescript, React, Nextjs, Python, Java and more.
         I try to learn and get better every single day. I especially love building interesting and
         useful stuff with code.`}
         </Text>
