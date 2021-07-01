@@ -13,7 +13,7 @@ export default function About() {
       flexWrap="wrap"
       justifyContent="space-between"
       alignItems="center"
-      mt="10rem"
+      pt="10rem"
     >
       <Box
         w={{ base: "100%", sm: "100%", md: "53%", lg: "63%", xl: "63%" }}

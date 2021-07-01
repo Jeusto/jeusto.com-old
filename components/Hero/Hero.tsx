@@ -1,6 +1,13 @@
-import { Box, Heading, Text, HStack } from "@chakra-ui/react";
-import { FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
-import { Link, Button, Icon } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Text,
+  HStack,
+  Link,
+  Button,
+  Icon,
+} from "@chakra-ui/react";
+import { FiGithub, FiTwitter, FiMail } from "react-icons/fi";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
 export default function Landing() {
@@ -29,27 +36,30 @@ export default function Landing() {
       <HStack mt="1.5rem" spacing="0.75rem">
         <Link href="mailto:arhunsad@gmail.com" isExternal>
           <Button
+            bg="buttonBackground"
             fontSize={isLgBreakpoint ? "16px" : "14px"}
             size={isLgBreakpoint ? "md" : "sm"}
-            leftIcon={<Icon as={FaEnvelope} />}
+            leftIcon={<Icon as={FiMail} />}
           >
             Email
           </Button>
         </Link>
         <Link href="https://github.com/Jeusto" isExternal>
           <Button
+            bg="buttonBackground"
             fontSize={isLgBreakpoint ? "16px" : "14px"}
             size={isLgBreakpoint ? "md" : "sm"}
-            leftIcon={<Icon as={FaGithub} />}
+            leftIcon={<Icon as={FiGithub} />}
           >
             Github
           </Button>
         </Link>
-        <Link href="https://twitter.com/Jeusto" isExternal>
+        <Link href="https://twitter.com/Jeustoo" isExternal>
           <Button
+            bg="buttonBackground"
             fontSize={isLgBreakpoint ? "16px" : "14px"}
             size={isLgBreakpoint ? "md" : "sm"}
-            leftIcon={<Icon as={FaTwitter} />}
+            leftIcon={<Icon as={FiTwitter} />}
           >
             Twitter
           </Button>

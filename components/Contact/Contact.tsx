@@ -19,6 +19,7 @@ export default function Contact() {
     <>
       <IconButton
         onClick={onOpen}
+        bg="buttonBackground"
         width="4rem"
         height="4rem"
         fontSize="2rem"

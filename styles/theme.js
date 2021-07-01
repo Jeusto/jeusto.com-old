@@ -14,6 +14,7 @@ const fluidType = (minFont, maxFont) => {
 const colors = {
   background: "#111111",
   cardBackground: "#191919",
+  buttonBackground: "#222222",
   textPrimary: "#ffffff",
   textSecondary: "#A3A3A3",
 };

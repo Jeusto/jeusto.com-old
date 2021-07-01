@@ -12,10 +12,12 @@ import {
   Heading,
   Link,
 } from "@chakra-ui/react";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { GoLinkExternal } from "react-icons/go";
 import { FaReact, FaPython, FaSass, FaCode, FaDatabase } from "react-icons/fa";
 import { IoLogoVercel } from "react-icons/io5";
 import { SiPhp, SiTypescript, SiJavascript } from "react-icons/si";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 type CardProps = {
   imageUrl: string;
@@ -34,6 +36,8 @@ export default function Card({
   demoLink,
   tag,
 }: CardProps) {
+  const isLgBreakPoint = useMediaQuery(1024);
+
   const getTag = (tag: string) => {
     let tagValues = { color: "gray", icon: FaCode, text: tag };
     switch (tag) {
@@ -77,9 +81,9 @@ export default function Card({
 
   const Tags = tag.map((el) => (
     <Tag
-      fontSize="1rem"
-      p="0.5rem"
-      size="lg"
+      fontSize={isLgBreakPoint ? "1rem" : "0.8rem"}
+      p={isLgBreakPoint ? "0.5rem" : "0.4rem"}
+      size={isLgBreakPoint ? "md" : "sm"}
       key={el}
       colorScheme={getTag(el).color}
     >
@@ -90,43 +94,51 @@ export default function Card({
 
   return (
     <Flex
-      mt="1rem"
+      className="project_card"
+      mt="2rem"
+      mr="2rem"
       bg="cardBackground"
       borderRadius="1rem"
       overflow="hidden"
       flexDirection="column"
-      w={{ sm: "40rem", md: "20rem", lg: "30rem", xl: "40rem" }}
+      minW="30rem"
+      maxW="40rem"
     >
       <Image w="100%" h="15rem" fit="cover" src={imageUrl} alt=""></Image>
-      <Flex justifyContent="space-between" alignItems="center" p="1rem">
-        <Heading size="2xl">{title}</Heading>
-        <HStack spacing="0.5rem">
-          <Link href={repoLink} isExternal>
-            <IconButton
-              bg="transparent"
-              fontSize="1.5rem"
-              borderRadius="0.5rem"
-              aria-label="Project repo"
-              icon={<FaGithub />}
-            />
-          </Link>
-          <Link href={demoLink} isExternal>
-            <IconButton
-              bg="transparent"
-              fontSize="1.5rem"
-              borderRadius="0.5rem"
-              aria-label="Project demo"
-              icon={<FaExternalLinkAlt />}
-            />
-          </Link>
-        </HStack>
-      </Flex>
-      <HStack p="1rem" pt="0rem">
-        {Tags}
-      </HStack>
-      <Divider margin="auto" w="94%" />
-      <Box p="1rem">
-        <Text color="lightGray">{desc}</Text>
+      <Box>
+        <Box>
+          <Flex justifyContent="space-between" alignItems="center" p="1rem">
+            <Heading fontSize="display2">{title}</Heading>
+            <HStack spacing="0.5rem">
+              <Link href={demoLink} isExternal>
+                <IconButton
+                  bg="transparent"
+                  fontSize="1.5rem"
+                  borderRadius="0.5rem"
+                  aria-label="Project demo"
+                  icon={<FiExternalLink />}
+                />
+              </Link>
+
+              <Link href={repoLink} isExternal>
+                <IconButton
+                  bg="transparent"
+                  fontSize="1.5rem"
+                  borderRadius="0.5rem"
+                  aria-label="Project repo"
+                  icon={<FiGithub />}
+                />
+              </Link>
+            </HStack>
+          </Flex>
+          <HStack p="1rem" pt="0rem">
+            {Tags}
+          </HStack>
+          <Divider margin="auto" w="94%" />
+        </Box>
+        <Flex flexDirection="column" justifyContent="flex-start" p="1rem">
+          <Text>{desc}</Text>
+        </Flex>
       </Box>
     </Flex>
   );

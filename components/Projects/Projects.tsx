@@ -1,17 +1,22 @@
-import { Box, Heading, Flex, SimpleGrid } from "@chakra-ui/layout";
+import { Box, Heading, Flex, Spacer, Stack, HStack } from "@chakra-ui/layout";
 import Card from "./Card";
 
 export default function Featured() {
   return (
     <Box id="projects" pt="10rem">
-      <Heading className="gradient_text1" fontSize="display2">
+      <Heading mb="-1rem" className="gradient_text1" fontSize="display2">
         {`Other projects I've made`}
       </Heading>
-      <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={16}>
+      <Flex
+        spacing="5rem"
+        flexWrap="wrap"
+        justifyContent="space-between"
+        alignItems="center"
+      >
         <Card
           imageUrl="https://i.imgur.com/vUZty5n.png"
           title="Trivia Ten"
-          desc="A multiplayer trivia game made in pure javascript using express & socketio. Create a room and play with your friends. There's more than 4000 questions and 20 categories from open trivia database."
+          desc="A multiplayer trivia game with rooms to play with your friends in real time."
           repoLink="https://github.com/Jeusto/trivia-ten"
           demoLink="https://trivia-ten.herokuapp.com/"
           tag={["Javascript", "Socket.io", "Express"]}
@@ -25,7 +30,7 @@ export default function Featured() {
           tag={["Php", "Sqlite", "Sass"]}
         ></Card>
         <Card
-          imageUrl="https://camo.githubusercontent.com/2f2d932626189e1fe26c9c6f3de087203e6efa0f01dddbbcff45e0552b0290e4/68747470733a2f2f692e696d6775722e636f6d2f344739627a62472e676966"
+          imageUrl="https://i.imgur.com/dA7y9Q6.png"
           title="Streamer is live"
           desc="A Chrome extension to see the status of your favorite twitch streamers and get an alert when they go live."
           repoLink="https://github.com/Jeusto/streamer-is-live"
@@ -33,7 +38,7 @@ export default function Featured() {
           tag={["Javascript", "Sass"]}
         ></Card>
         <Card
-          imageUrl="https://github.com/Jeusto/daily-wallpapers/raw/master/public/demo.gif"
+          imageUrl="https://i.imgur.com/M9TO2qR.png"
           title="Daily wallpapers"
           desc="A simple website to navigate through all the top wallpapers posted on Reddit every day."
           repoLink="https://github.com/Jeusto/daily-wallpapers"
@@ -41,7 +46,7 @@ export default function Featured() {
           tag={["React", "Styled components"]}
         ></Card>
         <Card
-          imageUrl="https://camo.githubusercontent.com/67a4e505c0fb4a231c511b51003ab06023ae739552382c7abe29a5badd1748ab/68747470733a2f2f692e696d6775722e636f6d2f70467430306a6b2e706e67"
+          imageUrl="https://i.imgur.com/AR2avfa.png"
           title="Tomotasks"
           desc="A productivity web app combining a countdown and a task list to use the Pomodoro technique."
           repoLink="https://github.com/Jeusto/tomotasks"
@@ -49,7 +54,7 @@ export default function Featured() {
           tag={["React"]}
         ></Card>
         <Card
-          imageUrl="https://github.com/Jeusto/game-of-life/raw/master/public/demo.gif"
+          imageUrl="https://i.imgur.com/YbrALwI.png"
           title="Game of life"
           desc="John Conway's game of life made in React. Create an initial configuration and observe how it evolves."
           repoLink="https://github.com/Jeusto/game-of-life"
@@ -57,14 +62,14 @@ export default function Featured() {
           tag={["React"]}
         ></Card>
         <Card
-          imageUrl="https://camo.githubusercontent.com/b1df51c71d929a35ef4183a863abae96a5fab582dd017160eeb89b254bab511b/68747470733a2f2f692e696d6775722e636f6d2f4d7330336463632e676966"
+          imageUrl="https://i.imgur.com/j0RtPun.png"
           title="Where's the ISS ?"
           desc="Observe the current location of the international space station with an interactive globe."
           repoLink="https://github.com/Jeusto/wheres-the-iss"
           demoLink="https://wheres-the-iss.vercel.app/"
           tag={["Javascript", "Three.js"]}
         ></Card>
-      </SimpleGrid>
+      </Flex>
     </Box>
   );
 }

@@ -13,6 +13,13 @@ export default function GlobalStyle({ children }) {
             margin: 0;
             padding: 0;
           }
+          .project_card {
+            transition: transform 0.3s ease-out;
+            display: inline-block;
+          }
+          .project_card:hover {
+            transform: translate(0, -5px);
+          }
 
           ${scrollbar}
           ${heading}

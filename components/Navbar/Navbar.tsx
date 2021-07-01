@@ -117,7 +117,7 @@ export default function Navbar() {
               Projects
             </Button>
           </Link>
-          <Link className="link  link--contact" href="" passHref>
+          <Link className="link  link--contact" href="#" passHref>
             <Button variant="underline" fontSize="18px">
               Contact
             </Button>
