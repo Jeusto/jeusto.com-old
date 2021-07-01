@@ -4,7 +4,7 @@ import SlideWhenVisible from "../../hooks/SlideWhenVisible";
 
 export default function Featured() {
   return (
-    <Box id="projects" pt="10rem">
+    <Box id="projects" pt="10rem" mb="5rem">
       <SlideWhenVisible threshold="0.11">
         <Heading mb="1rem" className="gradient_text1" fontSize="display2">
           {`Other projects I've made`}
