@@ -14,11 +14,11 @@ import {
   DrawerBody,
   Icon,
 } from "@chakra-ui/react";
-import logo from "/public/logo.svg";
+import { AiOutlineMenu } from "react-icons/ai";
 import NextImage from "next/image";
 import NextLink from "next/link";
+import logo from "/public/logo.svg";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import { AiOutlineMenu } from "react-icons/ai";
 
 export default function Navbar() {
   const isLargerThan768 = useMediaQuery(768);
@@ -82,7 +82,7 @@ export default function Navbar() {
       top="0"
       left="0"
     >
-      <NextLink href="/#" passHref>
+      <NextLink href="/" passHref>
         <Box pt="0.3rem" cursor="pointer">
           <NextImage
             layout="fixed"

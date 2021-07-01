@@ -1,7 +1,6 @@
 import { Box, Heading, Text, Flex } from "@chakra-ui/layout";
 import NextImage from "next/image";
 import me from "/public/me.jpg";
-import logo from "/public/logo.svg";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import SlideWhenVisible from "../../hooks/SlideWhenVisible";
 
@@ -28,7 +27,7 @@ export default function About() {
         <SlideWhenVisible threshold="0.11">
           <Text fontSize="display3" mt="1rem">
             {`Hey! I'm Arhun Saday, also known as Jeusto. I've been close to a 
-            computer since an early age, and been passionate about it since then.`}
+            computer since an early age and been passionate about it since then.`}
           </Text>
         </SlideWhenVisible>
         <SlideWhenVisible threshold="0">
@@ -41,7 +40,7 @@ export default function About() {
         <SlideWhenVisible threshold="0.11">
           <Text fontSize="display3" mt="1rem">
             {`I do programming in various languages and technologies including Typescript, React, Nextjs, Python, Java and more.
-          I try to learn and get better single day. I especially love building interesting and
+          I try to learn and get better every single day. I especially love designing and building interesting &
           useful stuff with code.`}
           </Text>
         </SlideWhenVisible>

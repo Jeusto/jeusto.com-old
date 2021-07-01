@@ -2,7 +2,12 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-export default function SlideWhenVisible({ children, threshold }) {
+type SlideProps = {
+  children: any;
+  threshold: any;
+};
+
+export default function SlideWhenVisible({ children, threshold }: SlideProps) {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: threshold ? threshold : 0.35 });
 
@@ -13,8 +18,6 @@ export default function SlideWhenVisible({ children, threshold }) {
   }, [controls, inView]);
   return (
     <motion.div
-      width="0"
-      height="0"
       ref={ref}
       animate={controls}
       initial="hidden"

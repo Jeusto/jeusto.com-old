@@ -1,6 +1,6 @@
 import "@fontsource/abhaya-libre";
 import type { AppProps } from "next/app";
-import { ChakraProvider, ThemeProvider } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import customTheme from "../styles/theme";
 import GlobalStyle from "../styles/global";
 

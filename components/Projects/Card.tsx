@@ -8,15 +8,15 @@ import {
   Tag,
   TagLeftIcon,
   TagLabel,
-  Divider,
   Heading,
   Link,
   AspectRatio,
 } from "@chakra-ui/react";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-import { FaReact, FaPython, FaSass, FaCode, FaDatabase } from "react-icons/fa";
+import { FaReact, FaPython, FaSass, FaDatabase, FaJava } from "react-icons/fa";
 import { IoLogoVercel } from "react-icons/io5";
-import { SiPhp, SiTypescript, SiJavascript } from "react-icons/si";
+import { SiPhp, SiTypescript, SiJavascript, SiMongodb } from "react-icons/si";
+import { HiOutlineCode } from "react-icons/hi";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import SlideWhenVisible from "../../hooks/SlideWhenVisible";
 
@@ -44,12 +44,12 @@ export default function Card({
       text: tag,
       backgroundColor: "#3a3b3c",
       textColor: "#e2e8f0",
-      icon: FaCode,
+      icon: HiOutlineCode,
     };
     switch (tag) {
       case "React":
         tagValues.backgroundColor = "#23383d";
-        tagValues.textColor = "#02cdf2";
+        tagValues.textColor = "#41c0d9";
         tagValues.icon = FaReact;
         break;
       case "Typescript":
@@ -58,8 +58,8 @@ export default function Card({
         tagValues.icon = SiTypescript;
         break;
       case "Javascript":
-        tagValues.backgroundColor = "#47452e";
-        tagValues.textColor = "#e0d360";
+        tagValues.backgroundColor = "#3b371c";
+        tagValues.textColor = "#d4c22f";
         tagValues.icon = SiJavascript;
         break;
       case "Next.js":
@@ -68,8 +68,8 @@ export default function Card({
         tagValues.icon = IoLogoVercel;
         break;
       case "Python":
-        tagValues.backgroundColor = "#453d24";
-        tagValues.textColor = "#e3be49";
+        tagValues.backgroundColor = "#40371a";
+        tagValues.textColor = "#d6b038";
         tagValues.icon = FaPython;
         break;
       case "Sass":
@@ -79,13 +79,23 @@ export default function Card({
         break;
       case "Php":
         tagValues.backgroundColor = "#37394a";
-        tagValues.textColor = "#9ca6ff";
+        tagValues.textColor = "#a2abfa";
         tagValues.icon = SiPhp;
+        break;
+      case "Java":
+        tagValues.backgroundColor = "#3d1d1d";
+        tagValues.textColor = "#fc686b";
+        tagValues.icon = FaJava;
         break;
       case "Sqlite":
         tagValues.backgroundColor = "#2b3540";
         tagValues.textColor = "#aad0fa";
         tagValues.icon = FaDatabase;
+        break;
+      case "MongoDB":
+        tagValues.backgroundColor = "#283b1e";
+        tagValues.textColor = "#7ac253";
+        tagValues.icon = SiMongodb;
         break;
       default:
         break;
@@ -108,58 +118,64 @@ export default function Card({
   ));
 
   return (
-    <Flex
-      boxShadow="sm"
-      className="project_card"
-      bg="cardBackground"
-      borderRadius="1rem"
-      overflow="hidden"
-      flexDirection="column"
-      minW="10rem"
-      maxW="47rem"
-    >
-      {imageUrl !== "" ? (
-        <AspectRatio ratio={25 / 10}>
-          <Image src={imageUrl} alt=""></Image>
-        </AspectRatio>
-      ) : (
-        ""
-      )}
-      <Box>
+    <SlideWhenVisible threshold="0.11">
+      <Flex
+        boxShadow="sm"
+        className="project_card"
+        bg="cardBackground"
+        borderRadius="1rem"
+        overflow="hidden"
+        flexDirection="column"
+        height="100%"
+      >
+        {imageUrl !== "" ? (
+          <AspectRatio ratio={25 / 10}>
+            <Image src={imageUrl} alt=""></Image>
+          </AspectRatio>
+        ) : (
+          ""
+        )}
         <Box>
-          <Flex justifyContent="space-between" alignItems="center" p="1rem">
-            <Heading fontSize="display2">{title}</Heading>
-            <HStack spacing="0.5rem">
-              <Link href={demoLink} isExternal>
-                <IconButton
-                  variant="ghost"
-                  fontSize="1.5rem"
-                  borderRadius="0.5rem"
-                  aria-label="Project demo"
-                  icon={<FiExternalLink />}
-                />
-              </Link>
+          <Box>
+            <Flex justifyContent="space-between" alignItems="center" p="1rem">
+              <Heading fontSize="display2">{title}</Heading>
+              <HStack spacing="0.5rem">
+                <Link href={demoLink} isExternal>
+                  <IconButton
+                    variant="ghost"
+                    fontSize="1.5rem"
+                    borderRadius="0.5rem"
+                    aria-label="Project demo"
+                    icon={<FiExternalLink />}
+                  />
+                </Link>
 
-              <Link href={repoLink} isExternal>
-                <IconButton
-                  variant="ghost"
-                  fontSize="1.5rem"
-                  borderRadius="0.5rem"
-                  aria-label="Project repo"
-                  icon={<FiGithub />}
-                />
-              </Link>
+                <Link href={repoLink} isExternal>
+                  <IconButton
+                    variant="ghost"
+                    fontSize="1.5rem"
+                    borderRadius="0.5rem"
+                    aria-label="Project repo"
+                    icon={<FiGithub />}
+                  />
+                </Link>
+              </HStack>
+            </Flex>
+            <HStack p="1rem" pt="0rem">
+              {Tags}
             </HStack>
+          </Box>
+          <Flex
+            borderTop="1px solid #2c2d2e"
+            flexDirection="column"
+            justifyContent="flex-start"
+            mx="1rem"
+            py="1rem"
+          >
+            <Text>{desc}</Text>
           </Flex>
-          <HStack p="1rem" pt="0rem">
-            {Tags}
-          </HStack>
-          <Divider bg="buttonBackground" margin="auto" w="96%" />
         </Box>
-        <Flex flexDirection="column" justifyContent="flex-start" p="1rem">
-          <Text>{desc}</Text>
-        </Flex>
-      </Box>
-    </Flex>
+      </Flex>
+    </SlideWhenVisible>
   );
 }

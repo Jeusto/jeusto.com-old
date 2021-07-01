@@ -18,7 +18,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "hooks/slideWhenVisible.js"
+    "hooks/SlideWhenVisible.tsx"
   ],
   "exclude": ["node_modules"]
 }

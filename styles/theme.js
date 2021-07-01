@@ -60,7 +60,6 @@ const Link = {
     _hover: { textDecoration: "none" },
   },
 };
-
 const CloseButton = {
   variants: {
     ghost: {
@@ -108,5 +107,4 @@ const overrides = extendTheme({
   },
 });
 
-const customTheme = extendTheme(overrides);
-export default customTheme;
+export default extendTheme(overrides);

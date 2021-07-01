@@ -14,7 +14,7 @@ export default function GlobalStyle({ children }) {
             padding: 0;
           }
           .project_card {
-            transition: transform 0.15s ease-out;
+            transition: transform 150ms ease-out;
             display: inline-block;
           }
           .project_card:hover {
@@ -32,17 +32,18 @@ export default function GlobalStyle({ children }) {
   );
 }
 
-// Styles
+// Custom scrollbar
 const scrollbar = `
 ::-webkit-scrollbar {
   width: 1rem;
-  background: #1c1c1c;
+  background: #191919;
 }
 ::-webkit-scrollbar-thumb {
-  background: #424242;
+  background: #414445;
 }
 `;
 
+// Gradient texts
 const heading = `
 .gradient_heading {
   width: fit-content;
@@ -81,6 +82,7 @@ const heading = `
 }
 `;
 
+// Squircle avatar
 const squircle = `
 .defs {
   position: absolute;
@@ -93,6 +95,7 @@ const squircle = `
   clip-path: url(#squircle);
 }`;
 
+// Navbar links with underline
 const navbar_links = `
 .link {
   font-size: 20px;
