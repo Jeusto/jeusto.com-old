@@ -12,7 +12,7 @@ export default function Featured() {
       </SlideWhenVisible>
       <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={"3rem"}>
         <Card
-          imageUrl="https://i.imgur.com/d4gl0QB.png"
+          imageUrl="https://i.imgur.com/TV77Nup.jpeg"
           title="Trivia Ten"
           desc="A multiplayer trivia game with rooms to play with your friends in real time."
           repoLink="https://github.com/Jeusto/trivia-ten"
@@ -20,7 +20,7 @@ export default function Featured() {
           tag={["Javascript", "Socket.io", "Express"]}
         ></Card>
         <Card
-          imageUrl="https://i.imgur.com/X1NLNKM.png"
+          imageUrl="https://i.imgur.com/2WSZ8YH.jpeg"
           title="Zombie recipes"
           desc="A fullstack recipe website with user submissions, language selection and more."
           repoLink="https://github.com/Jeusto/zombie-recipes"
@@ -28,7 +28,7 @@ export default function Featured() {
           tag={["Php", "Sqlite", "Sass"]}
         ></Card>
         <Card
-          imageUrl="https://i.imgur.com/JiHrHMt.png"
+          imageUrl="https://i.imgur.com/ds28JNq.jpeg"
           title="Streamer is live"
           desc="A Chrome extension to see the status of your favorite twitch streamers and get an alert when they go live."
           repoLink="https://github.com/Jeusto/streamer-is-live"
@@ -36,7 +36,7 @@ export default function Featured() {
           tag={["Javascript", "Sass"]}
         ></Card>
         <Card
-          imageUrl="https://i.imgur.com/PTM1XQN.png"
+          imageUrl="https://i.imgur.com/9MoAHMt.jpeg"
           title="Daily wallpapers"
           desc="A simple website to navigate through all the top wallpapers posted on Reddit every day."
           repoLink="https://github.com/Jeusto/daily-wallpapers"
@@ -44,7 +44,7 @@ export default function Featured() {
           tag={["React", "Styled components"]}
         ></Card>
         <Card
-          imageUrl="https://i.imgur.com/AW8py1e.png"
+          imageUrl="https://i.imgur.com/EF1T5zS.jpeg"
           title="Jeusto website"
           desc="First version of my website/portfolio."
           repoLink="https://github.com/Jeusto/personal-website-v1"
@@ -52,7 +52,7 @@ export default function Featured() {
           tag={["Typescript", "Next.js", "Chakra UI"]}
         ></Card>
         <Card
-          imageUrl="https://i.imgur.com/KZ47ZGC.png"
+          imageUrl="https://i.imgur.com/8VIBCMS.jpeg"
           title="Tomotasks"
           desc="A productivity web app combining a countdown and a task list to use the Pomodoro technique."
           repoLink="https://github.com/Jeusto/tomotasks"

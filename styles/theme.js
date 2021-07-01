@@ -30,6 +30,10 @@ const breakpoints = createBreakpoints({
   lg: "1024px",
   xl: "1280px",
 });
+const config = {
+  initialColorMode: "dark",
+  useSystemColorMode: false,
+};
 
 // Component styles
 const Button = {
@@ -77,6 +81,7 @@ const overrides = extendTheme({
   colors,
   fonts,
   breakpoints,
+  config,
   fontSizes: {
     base: "16px",
     xs: fluidType(6, 12),
