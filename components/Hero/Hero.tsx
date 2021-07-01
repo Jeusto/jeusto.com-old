@@ -1,12 +1,4 @@
-import {
-  Box,
-  Heading,
-  Text,
-  HStack,
-  Link,
-  Button,
-  Icon,
-} from "@chakra-ui/react";
+import { Box, Heading, Text, Flex, Link, Button, Icon } from "@chakra-ui/react";
 import { FiGithub, FiTwitter, FiMail } from "react-icons/fi";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
@@ -33,10 +25,10 @@ export default function Landing() {
           {`🏫 Currently a student at the University of Strasbourg in France.`}
         </Text>
       </Box>
-      <HStack mt="1.5rem" spacing="0.75rem">
+      <Flex mt="1rem">
         <Link href="mailto:arhunsad@gmail.com" isExternal>
           <Button
-            bg="buttonBackground"
+            variant="ghost"
             fontSize={isLgBreakpoint ? "16px" : "14px"}
             size={isLgBreakpoint ? "md" : "sm"}
             leftIcon={<Icon as={FiMail} />}
@@ -44,9 +36,9 @@ export default function Landing() {
             Email
           </Button>
         </Link>
-        <Link href="https://github.com/Jeusto" isExternal>
+        <Link ml="0.7rem" href="https://github.com/Jeusto" isExternal>
           <Button
-            bg="buttonBackground"
+            variant="ghost"
             fontSize={isLgBreakpoint ? "16px" : "14px"}
             size={isLgBreakpoint ? "md" : "sm"}
             leftIcon={<Icon as={FiGithub} />}
@@ -54,9 +46,9 @@ export default function Landing() {
             Github
           </Button>
         </Link>
-        <Link href="https://twitter.com/Jeustoo" isExternal>
+        <Link ml="0.7rem" href="https://twitter.com/Jeustoo" isExternal>
           <Button
-            bg="buttonBackground"
+            variant="ghost"
             fontSize={isLgBreakpoint ? "16px" : "14px"}
             size={isLgBreakpoint ? "md" : "sm"}
             leftIcon={<Icon as={FiTwitter} />}
@@ -64,7 +56,7 @@ export default function Landing() {
             Twitter
           </Button>
         </Link>
-      </HStack>
+      </Flex>
     </Box>
   );
 }

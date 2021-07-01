@@ -11,9 +11,9 @@ import {
   Divider,
   Heading,
   Link,
+  AspectRatio,
 } from "@chakra-ui/react";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-import { GoLinkExternal } from "react-icons/go";
 import { FaReact, FaPython, FaSass, FaCode, FaDatabase } from "react-icons/fa";
 import { IoLogoVercel } from "react-icons/io5";
 import { SiPhp, SiTypescript, SiJavascript } from "react-icons/si";
@@ -39,38 +39,51 @@ export default function Card({
   const isLgBreakPoint = useMediaQuery(1024);
 
   const getTag = (tag: string) => {
-    let tagValues = { color: "gray", icon: FaCode, text: tag };
+    let tagValues = {
+      text: tag,
+      backgroundColor: "#3a3b3c",
+      textColor: "#e2e8f0",
+      icon: FaCode,
+    };
     switch (tag) {
       case "React":
-        tagValues.color = "blue";
+        tagValues.backgroundColor = "#23383d";
+        tagValues.textColor = "#02cdf2";
         tagValues.icon = FaReact;
         break;
       case "Typescript":
-        tagValues.color = "blue";
+        tagValues.backgroundColor = "#243140";
+        tagValues.textColor = "#59a8ff";
         tagValues.icon = SiTypescript;
         break;
       case "Javascript":
-        tagValues.color = "yellow";
+        tagValues.backgroundColor = "#47452e";
+        tagValues.textColor = "#e0d360";
         tagValues.icon = SiJavascript;
         break;
       case "Next.js":
-        tagValues.color = "lightgray";
+        tagValues.backgroundColor = "#121212";
+        tagValues.textColor = "#e2e8f0";
         tagValues.icon = IoLogoVercel;
         break;
       case "Python":
-        tagValues.color = "orange";
+        tagValues.backgroundColor = "#453d24";
+        tagValues.textColor = "#e3be49";
         tagValues.icon = FaPython;
         break;
       case "Sass":
-        tagValues.color = "pink";
+        tagValues.backgroundColor = "#47313c";
+        tagValues.textColor = "#fa78b9";
         tagValues.icon = FaSass;
         break;
       case "Php":
-        tagValues.color = "purple";
+        tagValues.backgroundColor = "#37394a";
+        tagValues.textColor = "#9ca6ff";
         tagValues.icon = SiPhp;
         break;
       case "Sqlite":
-        tagValues.color = "teal";
+        tagValues.backgroundColor = "#2b3540";
+        tagValues.textColor = "#aad0fa";
         tagValues.icon = FaDatabase;
         break;
       default:
@@ -85,7 +98,8 @@ export default function Card({
       p={isLgBreakPoint ? "0.5rem" : "0.4rem"}
       size={isLgBreakPoint ? "md" : "sm"}
       key={el}
-      colorScheme={getTag(el).color}
+      bg={getTag(el).backgroundColor}
+      color={getTag(el).textColor}
     >
       <TagLeftIcon as={getTag(el).icon} />
       <TagLabel>{el}</TagLabel>
@@ -95,16 +109,20 @@ export default function Card({
   return (
     <Flex
       className="project_card"
-      mt="2rem"
-      mr="2rem"
       bg="cardBackground"
       borderRadius="1rem"
       overflow="hidden"
       flexDirection="column"
-      minW="30rem"
-      maxW="40rem"
+      minW="25rem"
+      maxW="47rem"
     >
-      <Image w="100%" h="15rem" fit="cover" src={imageUrl} alt=""></Image>
+      {imageUrl !== "" ? (
+        <AspectRatio ratio={25 / 10}>
+          <Image src={imageUrl} alt=""></Image>
+        </AspectRatio>
+      ) : (
+        ""
+      )}
       <Box>
         <Box>
           <Flex justifyContent="space-between" alignItems="center" p="1rem">
@@ -112,7 +130,7 @@ export default function Card({
             <HStack spacing="0.5rem">
               <Link href={demoLink} isExternal>
                 <IconButton
-                  bg="transparent"
+                  variant="ghost"
                   fontSize="1.5rem"
                   borderRadius="0.5rem"
                   aria-label="Project demo"
@@ -122,7 +140,7 @@ export default function Card({
 
               <Link href={repoLink} isExternal>
                 <IconButton
-                  bg="transparent"
+                  variant="ghost"
                   fontSize="1.5rem"
                   borderRadius="0.5rem"
                   aria-label="Project repo"
@@ -134,7 +152,7 @@ export default function Card({
           <HStack p="1rem" pt="0rem">
             {Tags}
           </HStack>
-          <Divider margin="auto" w="94%" />
+          <Divider bg="buttonBackground" margin="auto" w="96%" />
         </Box>
         <Flex flexDirection="column" justifyContent="flex-start" p="1rem">
           <Text>{desc}</Text>

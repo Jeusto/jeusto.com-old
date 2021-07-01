@@ -24,6 +24,7 @@ const fonts = {
 };
 const breakpoints = createBreakpoints({
   base: "0px",
+  xs: "320",
   sm: "480px",
   md: "768px",
   lg: "1024px",
@@ -32,14 +33,22 @@ const breakpoints = createBreakpoints({
 
 // Component styles
 const Button = {
-  baseStyle: {
-    bg: "blue.400",
-    _focus: {
-      boxShadow: "0 0 1px 3px #7d7d7d, 0 1px 1px rgba(0, 0, 0, .15)",
-    },
-  },
   sizes: {},
   variants: {
+    ghost: {
+      bg: "cardBackground",
+      _hover: { bg: "buttonBackground" },
+      _focus: {
+        boxShadow: "0",
+      },
+    },
+    ghost2: {
+      bg: "rgba(48, 48, 48, 0.75)",
+      _hover: { bg: "#303030" },
+      _focus: {
+        boxShadow: "0",
+      },
+    },
     underline: {
       bg: "transparent",
       _hover: {},
@@ -56,26 +65,13 @@ const Link = {
     _hover: { textDecoration: "none" },
   },
 };
-const IconButton = {
-  baseStyle: {
-    bg: "transparent",
-    _hover: { textDecoration: "none" },
-    _focus: {
-      boxShadow: "0 0 1px 3px red, 0 1px 1px rgba(0, 0, 0, .15)",
-    },
-  },
-};
-const DrawerCloseButton = {
-  baseStyle: {
-    _focus: {
-      boxShadow: "0 0 1px 3px red, 0 1px 1px rgba(0, 0, 0, .15)",
-    },
-  },
-};
-const ModalCloseButton = {
-  baseStyle: {
-    _focus: {
-      boxShadow: "0 0 1px 3px red, 0 1px 1px rgba(0, 0, 0, .15)",
+const CloseButton = {
+  variants: {
+    ghost: {
+      _hover: { bg: "buttonBackground" },
+      _focus: {
+        boxShadow: "0",
+      },
     },
   },
 };
@@ -104,7 +100,7 @@ const overrides = extendTheme({
     display2: fluidType(24, 36),
     display3: fluidType(16, 24),
   },
-  components: { Button, Link, IconButton, ModalCloseButton, DrawerCloseButton },
+  components: { Button, Link, CloseButton },
   styles: {
     global: {
       body: {

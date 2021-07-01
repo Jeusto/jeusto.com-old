@@ -2,11 +2,9 @@ import {
   Flex,
   Button,
   Box,
-  Slide,
   HStack,
   VStack,
   Link,
-  Text,
   useDisclosure,
   Drawer,
   DrawerOverlay,
@@ -14,13 +12,11 @@ import {
   DrawerCloseButton,
   DrawerHeader,
   DrawerBody,
-  Stack,
   Icon,
 } from "@chakra-ui/react";
 import logo from "/public/logo.svg";
 import NextImage from "next/image";
 import NextLink from "next/link";
-import React, { useRef } from "react";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { AiOutlineMenu } from "react-icons/ai";
 
@@ -33,7 +29,7 @@ export default function Navbar() {
       <Drawer isOpen={isOpen} placement="right" size="full" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent bg="background">
-          <DrawerCloseButton />
+          <DrawerCloseButton variant="ghost" />
           <DrawerHeader mb="2rem"></DrawerHeader>
           <DrawerBody>
             <VStack spacing="0.75rem">
@@ -115,11 +111,6 @@ export default function Navbar() {
           <Link className="link link--projects" href="#projects" passHref>
             <Button variant="underline" fontSize="18px">
               Projects
-            </Button>
-          </Link>
-          <Link className="link  link--contact" href="#" passHref>
-            <Button variant="underline" fontSize="18px">
-              Contact
             </Button>
           </Link>
         </HStack>

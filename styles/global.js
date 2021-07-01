@@ -8,6 +8,7 @@ export default function GlobalStyle({ children }) {
         styles={css`
           html,
           body {
+            scroll-behavior: smooth;
             overflow-x: hidden;
             max-width: 100vw;
             margin: 0;

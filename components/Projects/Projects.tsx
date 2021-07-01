@@ -1,18 +1,13 @@
-import { Box, Heading, Flex, Spacer, Stack, HStack } from "@chakra-ui/layout";
+import { Box, Heading, SimpleGrid } from "@chakra-ui/layout";
 import Card from "./Card";
 
 export default function Featured() {
   return (
     <Box id="projects" pt="10rem">
-      <Heading mb="-1rem" className="gradient_text1" fontSize="display2">
+      <Heading mb="1rem" className="gradient_text1" fontSize="display2">
         {`Other projects I've made`}
       </Heading>
-      <Flex
-        spacing="5rem"
-        flexWrap="wrap"
-        justifyContent="space-between"
-        alignItems="center"
-      >
+      <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={"3rem"}>
         <Card
           imageUrl="https://i.imgur.com/vUZty5n.png"
           title="Trivia Ten"
@@ -54,7 +49,15 @@ export default function Featured() {
           tag={["React"]}
         ></Card>
         <Card
-          imageUrl="https://i.imgur.com/YbrALwI.png"
+          imageUrl="https://i.imgur.com/LqNwjPk.png"
+          title="Jeusto website"
+          desc="First version of my website/portfolio."
+          repoLink="https://github.com/Jeusto/personal-website-v1"
+          demoLink="https://www.jeusto.me/"
+          tag={["Typescript", "Next.js", "Chakra UI"]}
+        ></Card>
+        <Card
+          imageUrl=""
           title="Game of life"
           desc="John Conway's game of life made in React. Create an initial configuration and observe how it evolves."
           repoLink="https://github.com/Jeusto/game-of-life"
@@ -62,14 +65,14 @@ export default function Featured() {
           tag={["React"]}
         ></Card>
         <Card
-          imageUrl="https://i.imgur.com/j0RtPun.png"
+          imageUrl=""
           title="Where's the ISS ?"
           desc="Observe the current location of the international space station with an interactive globe."
           repoLink="https://github.com/Jeusto/wheres-the-iss"
           demoLink="https://wheres-the-iss.vercel.app/"
           tag={["Javascript", "Three.js"]}
         ></Card>
-      </Flex>
+      </SimpleGrid>
     </Box>
   );
 }
