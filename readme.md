@@ -1,7 +1,8 @@
 # Personal website
 
-First version of my website/portfolio made with Next.js & Chakra ui.
+First version of my website/portfolio made with Next.js & Chakra ui. It has a perfect score on Lighthouse for desktop.
 
-https://www.jeusto.me/
+Visit here: https://www.jeusto.me/
 
 ![demo](public/demo.png)
+![lighthouse](public/lighthouse.png)
