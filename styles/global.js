@@ -9,13 +9,12 @@ export default function GlobalStyle({ children }) {
           html,
           body {
             scroll-behavior: smooth;
-            overflow-x: hidden;
             max-width: 100vw;
             margin: 0;
             padding: 0;
           }
           .project_card {
-            transition: transform 0.3s ease-out;
+            transition: transform 0.15s ease-out;
             display: inline-block;
           }
           .project_card:hover {

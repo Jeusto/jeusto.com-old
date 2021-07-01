@@ -10,9 +10,36 @@ export default function Index() {
   return (
     <>
       <NextHead>
+        {`<!-- Primary Meta Tags -->`}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Jeusto - Arhun Saday</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#111111" />
+        <title>Jeusto - Arhun Saday</title>
+        <meta
+          name="description"
+          content="Developer in France, an undergraduate student at the University of Strasbourg."
+        />
+        {`<!-- Open Graph / Facebook -->`}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.jeusto.me/" />
+        <meta property="og:title" content="Jeusto - Arhun Saday" />
+        <meta property="og:image" content="https://i.imgur.com/cfTxNyc.png" />
+        <meta
+          property="og:description"
+          content="Developer in France, an undergraduate student at the University of Strasbourg."
+        />
+        {`<!-- Twitter -->`}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://www.jeusto.me/" />
+        <meta property="twitter:title" content="Jeusto - Arhun Saday" />
+        <meta
+          property="twitter:image"
+          content="https://i.imgur.com/cfTxNyc.png"
+        />
+        <meta
+          property="twitter:description"
+          content="Developer in France, an undergraduate student at the University of Strasbourg."
+        />
       </NextHead>
       <Navbar></Navbar>
       <Hero></Hero>

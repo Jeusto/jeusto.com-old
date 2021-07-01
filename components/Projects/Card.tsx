@@ -18,6 +18,7 @@ import { FaReact, FaPython, FaSass, FaCode, FaDatabase } from "react-icons/fa";
 import { IoLogoVercel } from "react-icons/io5";
 import { SiPhp, SiTypescript, SiJavascript } from "react-icons/si";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import SlideWhenVisible from "../../hooks/SlideWhenVisible";
 
 type CardProps = {
   imageUrl: string;
@@ -108,12 +109,13 @@ export default function Card({
 
   return (
     <Flex
+      boxShadow="sm"
       className="project_card"
       bg="cardBackground"
       borderRadius="1rem"
       overflow="hidden"
       flexDirection="column"
-      minW="25rem"
+      minW="10rem"
       maxW="47rem"
     >
       {imageUrl !== "" ? (

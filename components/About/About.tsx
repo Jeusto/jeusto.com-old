@@ -3,6 +3,7 @@ import NextImage from "next/image";
 import me from "/public/me.jpg";
 import logo from "/public/logo.svg";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import SlideWhenVisible from "../../hooks/SlideWhenVisible";
 
 export default function About() {
   const isMediumBreakpoint = useMediaQuery(768);
@@ -19,23 +20,31 @@ export default function About() {
         w={{ base: "100%", sm: "100%", md: "53%", lg: "63%", xl: "63%" }}
         maxW="65rem"
       >
-        <Heading className="gradient_text1" fontSize="display2">
-          About me
-        </Heading>
-        <Text fontSize="display3" mt="1rem">
-          {`Hey! I'm Arhun Saday, also known as Jeusto. I've been close to a 
+        <SlideWhenVisible threshold="0.11">
+          <Heading className="gradient_text1" fontSize="display2">
+            About me
+          </Heading>
+        </SlideWhenVisible>
+        <SlideWhenVisible threshold="0.11">
+          <Text fontSize="display3" mt="1rem">
+            {`Hey! I'm Arhun Saday, also known as Jeusto. I've been close to a 
             computer since an early age, and been passionate about it since then.`}
-        </Text>
-        <Text fontSize="display3" mt="1rem">
-          {`I've been doing graphic design and 3D modeling as a hobby for a few years. Fast forward to today, I
+          </Text>
+        </SlideWhenVisible>
+        <SlideWhenVisible threshold="0">
+          <Text fontSize="display3" mt="1rem">
+            {`I've been doing graphic design and 3D modeling as a hobby for a few years. Fast forward to today, I
           study computer science and maths at the University of Strasbourg in
           France.`}
-        </Text>
-        <Text fontSize="display3" mt="1rem">
-          {`I do programming in various languages and technologies including Typescript, React, Nextjs, Python, Java and more.
+          </Text>
+        </SlideWhenVisible>
+        <SlideWhenVisible threshold="0.11">
+          <Text fontSize="display3" mt="1rem">
+            {`I do programming in various languages and technologies including Typescript, React, Nextjs, Python, Java and more.
           I try to learn and get better single day. I especially love building interesting and
           useful stuff with code.`}
-        </Text>
+          </Text>
+        </SlideWhenVisible>
       </Box>
       <Box
         w={{ base: "70%", sm: "70%", md: "45%", lg: "35%", xl: "35%" }}
@@ -49,7 +58,9 @@ export default function About() {
             </clipPath>
           </defs>
         </svg>
-        <NextImage className="squircle" src={me} alt="Segun Adebayo" />
+        <SlideWhenVisible threshold="0.11">
+          <NextImage className="squircle" src={me} alt="Segun Adebayo" />
+        </SlideWhenVisible>
       </Box>
     </Flex>
   );

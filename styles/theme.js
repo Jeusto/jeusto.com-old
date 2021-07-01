@@ -38,23 +38,18 @@ const Button = {
     ghost: {
       bg: "cardBackground",
       _hover: { bg: "buttonBackground" },
-      _focus: {
-        boxShadow: "0",
-      },
+      _active: { bg: "buttonBackground" },
+      _focus: { boxShadow: "0" },
     },
     ghost2: {
       bg: "rgba(48, 48, 48, 0.75)",
       _hover: { bg: "#303030" },
-      _focus: {
-        boxShadow: "0",
-      },
+      _active: { bg: "#303030" },
+      _focus: { boxShadow: "0" },
     },
     underline: {
       bg: "transparent",
-      _hover: {},
-      _focus: {
-        boxShadow: "0",
-      },
+      _focus: { boxShadow: "0" },
     },
   },
   defaultProps: {},
@@ -65,6 +60,7 @@ const Link = {
     _hover: { textDecoration: "none" },
   },
 };
+
 const CloseButton = {
   variants: {
     ghost: {

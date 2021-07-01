@@ -26,7 +26,6 @@ export default function Contact() {
   return (
     <>
       <IconButton
-        onClick={onOpen}
         variant="ghost2"
         width="4rem"
         height="4rem"

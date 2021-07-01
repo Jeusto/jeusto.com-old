@@ -37,7 +37,6 @@ export default function Navbar() {
                 onClick={onClose}
                 className="link link--about"
                 href="#about"
-                passHref
               >
                 <Button variant="underline" fontSize="6xl">
                   About
@@ -47,7 +46,6 @@ export default function Navbar() {
                 onClick={onClose}
                 className="link link--featured"
                 href="#featured"
-                passHref
               >
                 <Button variant="underline" fontSize="6xl">
                   Featured
@@ -57,7 +55,6 @@ export default function Navbar() {
                 onClick={onClose}
                 className="link link--projects"
                 href="#projects"
-                passHref
               >
                 <Button variant="underline" fontSize="6xl">
                   Projects
@@ -98,17 +95,17 @@ export default function Navbar() {
       </NextLink>
       {isLargerThan768 ? (
         <HStack spacing="0.75rem">
-          <Link className="link link--about" href="#about" passHref>
+          <Link className="link link--about" href="#about">
             <Button variant="underline" fontSize="18px">
               About
             </Button>
           </Link>
-          <Link className="link link--featured" href="#featured" passHref>
+          <Link className="link link--featured" href="#featured">
             <Button variant="underline" fontSize="18px">
               Featured
             </Button>
           </Link>
-          <Link className="link link--projects" href="#projects" passHref>
+          <Link className="link link--projects" href="#projects">
             <Button variant="underline" fontSize="18px">
               Projects
             </Button>
