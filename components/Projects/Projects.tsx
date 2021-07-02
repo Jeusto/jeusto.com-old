@@ -52,7 +52,7 @@ export default function Featured() {
           tag={["Typescript", "Next.js", "Chakra UI"]}
         ></Card>
         <Card
-          imageUrl="https://i.imgur.com/8VIBCMS.jpeg"
+          imageUrl="https://i.imgur.com/UJZtrF8.jpeg"
           title="Tomotasks"
           desc="A productivity web app combining a countdown and a task list to use the Pomodoro technique."
           repoLink="https://github.com/Jeusto/tomotasks"
