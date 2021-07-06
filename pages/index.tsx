@@ -4,8 +4,13 @@ import Hero from "../components/Hero/Hero";
 import About from "../components/About/About";
 import Featured from "../components/Featured/Featured";
 import Projects from "../components/Projects/Projects";
+import { connectToDatabase } from "../util/mongodb";
 
-export default function Index() {
+type IndexProps = {
+  projects: object;
+};
+
+export default function Index({ projects }: IndexProps) {
   return (
     <>
       <Head>
@@ -44,7 +49,19 @@ export default function Index() {
       <Hero></Hero>
       <About></About>
       <Featured></Featured>
-      <Projects></Projects>
+      <Projects projects={projects}></Projects>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const { db } = await connectToDatabase();
+
+  const projects = await db.collection("projects").find({}).toArray();
+
+  return {
+    props: {
+      projects: JSON.parse(JSON.stringify(projects)),
+    },
+  };
 }

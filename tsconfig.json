@@ -19,7 +19,8 @@
     "**/*.ts",
     "**/*.tsx",
     "hooks/SlideWhenVisible.tsx",
-    "pages/_document.tsx"
+    "pages/_document.tsx",
+    "pages/api/projects.js"
   ],
   "exclude": ["node_modules"]
 }

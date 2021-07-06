@@ -12,30 +12,36 @@ import {
   Link,
   AspectRatio,
 } from "@chakra-ui/react";
+import {
+  SiPhp,
+  SiTypescript,
+  SiJavascript,
+  SiMongodb,
+  SiFlask,
+} from "react-icons/si";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { FaReact, FaPython, FaSass, FaDatabase, FaJava } from "react-icons/fa";
 import { IoLogoVercel } from "react-icons/io5";
-import { SiPhp, SiTypescript, SiJavascript, SiMongodb } from "react-icons/si";
 import { HiOutlineCode } from "react-icons/hi";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import SlideWhenVisible from "../../hooks/SlideWhenVisible";
 
 type CardProps = {
-  imageUrl: string;
+  image: string;
   title: string;
-  desc: string;
+  description: string;
   repoLink: string;
   demoLink: string;
-  tag: string[];
+  tags: string[];
 };
 
 export default function Card({
-  imageUrl,
+  image,
   title,
-  desc,
+  description,
   repoLink,
   demoLink,
-  tag,
+  tags,
 }: CardProps) {
   const isLgBreakPoint = useMediaQuery(1024);
 
@@ -97,13 +103,18 @@ export default function Card({
         tagValues.textColor = "#7ac253";
         tagValues.icon = SiMongodb;
         break;
+      case "Flask":
+        tagValues.backgroundColor = "#121212";
+        tagValues.textColor = "#e2e8f0";
+        tagValues.icon = SiFlask;
+        break;
       default:
         break;
     }
     return tagValues;
   };
 
-  const Tags = tag.map((el) => (
+  const Tags = tags.map((el) => (
     <Tag
       fontSize={isLgBreakPoint ? "1rem" : "0.8rem"}
       p={isLgBreakPoint ? "0.5rem" : "0.4rem"}
@@ -128,9 +139,9 @@ export default function Card({
         flexDirection="column"
         height="100%"
       >
-        {imageUrl !== "" ? (
+        {image !== "" ? (
           <AspectRatio ratio={25 / 10}>
-            <Image src={imageUrl} alt=""></Image>
+            <Image src={image} alt=""></Image>
           </AspectRatio>
         ) : (
           ""
@@ -140,16 +151,19 @@ export default function Card({
             <Flex justifyContent="space-between" alignItems="center" p="1rem">
               <Heading fontSize="display2">{title}</Heading>
               <HStack spacing="0.5rem">
-                <Link href={demoLink} isExternal>
-                  <IconButton
-                    variant="ghost"
-                    fontSize="1.5rem"
-                    borderRadius="0.5rem"
-                    aria-label="Project demo"
-                    icon={<FiExternalLink />}
-                  />
-                </Link>
-
+                {demoLink !== "" ? (
+                  <Link href={demoLink} isExternal>
+                    <IconButton
+                      variant="ghost"
+                      fontSize="1.5rem"
+                      borderRadius="0.5rem"
+                      aria-label="Project demo"
+                      icon={<FiExternalLink />}
+                    />
+                  </Link>
+                ) : (
+                  ""
+                )}
                 <Link href={repoLink} isExternal>
                   <IconButton
                     variant="ghost"
@@ -172,7 +186,7 @@ export default function Card({
             mx="1rem"
             py="1rem"
           >
-            <Text>{desc}</Text>
+            <Text>{description}</Text>
           </Flex>
         </Box>
       </Flex>
