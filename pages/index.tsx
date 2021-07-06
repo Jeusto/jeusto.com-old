@@ -54,7 +54,7 @@ export default function Index({ projects }: IndexProps) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const { db } = await connectToDatabase();
 
   const projects = await db.collection("projects").find({}).toArray();
