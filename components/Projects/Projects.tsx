@@ -21,7 +21,7 @@ export default function Projects({ projects }: ProjectsProps) {
           })
           .map((project) => (
             <Card
-              key={project.id}
+              key={project.order}
               image={project.image}
               title={project.title}
               description={project.description}
