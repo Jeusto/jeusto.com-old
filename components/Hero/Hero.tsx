@@ -1,12 +1,10 @@
-import { Box, Heading, Text, Flex, Link, Button, Icon } from "@chakra-ui/react";
-import { FiGithub, FiTwitter, FiMail } from "react-icons/fi";
+import { Box, Heading, Text, Flex } from "@chakra-ui/react";
+import { FiGithub, FiTwitter, FiMail, FiLinkedin } from "react-icons/fi";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import SlideWhenVisible from "../../hooks/SlideWhenVisible";
 import CustomLink from "./CustomLink";
 
 export default function Landing() {
-  const isLgBreakpoint = useMediaQuery(1024);
-
   return (
     <Box mt="10rem">
       <SlideWhenVisible threshold="0.11">
@@ -46,6 +44,12 @@ export default function Landing() {
             url="https://github.com/Jeusto"
             name="Github"
             icon={FiGithub}
+          ></CustomLink>
+          <CustomLink
+            isFirst={false}
+            url="https://www.linkedin.com/in/asaday/"
+            name="LinkedIn"
+            icon={FiLinkedin}
           ></CustomLink>
           <CustomLink
             isFirst={false}
