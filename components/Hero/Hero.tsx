@@ -2,6 +2,7 @@ import { Box, Heading, Text, Flex, Link, Button, Icon } from "@chakra-ui/react";
 import { FiGithub, FiTwitter, FiMail } from "react-icons/fi";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import SlideWhenVisible from "../../hooks/SlideWhenVisible";
+import CustomLink from "./CustomLink";
 
 export default function Landing() {
   const isLgBreakpoint = useMediaQuery(1024);
@@ -34,36 +35,24 @@ export default function Landing() {
       </SlideWhenVisible>
       <SlideWhenVisible threshold="0.11">
         <Flex mt="1rem">
-          <Link href="mailto:arhunsad@gmail.com" isExternal>
-            <Button
-              variant="ghost"
-              fontSize={isLgBreakpoint ? "16px" : "14px"}
-              size={isLgBreakpoint ? "md" : "sm"}
-              leftIcon={<Icon as={FiMail} />}
-            >
-              Email
-            </Button>
-          </Link>
-          <Link ml="0.7rem" href="https://github.com/Jeusto" isExternal>
-            <Button
-              variant="ghost"
-              fontSize={isLgBreakpoint ? "16px" : "14px"}
-              size={isLgBreakpoint ? "md" : "sm"}
-              leftIcon={<Icon as={FiGithub} />}
-            >
-              Github
-            </Button>
-          </Link>
-          <Link ml="0.7rem" href="https://twitter.com/Jeustoo" isExternal>
-            <Button
-              variant="ghost"
-              fontSize={isLgBreakpoint ? "16px" : "14px"}
-              size={isLgBreakpoint ? "md" : "sm"}
-              leftIcon={<Icon as={FiTwitter} />}
-            >
-              Twitter
-            </Button>
-          </Link>
+          <CustomLink
+            isFirst={true}
+            url="mailto:arhunsad@gmail.com"
+            name="Email"
+            icon={FiMail}
+          ></CustomLink>
+          <CustomLink
+            isFirst={false}
+            url="https://github.com/Jeusto"
+            name="Github"
+            icon={FiGithub}
+          ></CustomLink>
+          <CustomLink
+            isFirst={false}
+            url="https://twitter.com/Jeustoo"
+            name="Twitter"
+            icon={FiTwitter}
+          ></CustomLink>
         </Flex>
       </SlideWhenVisible>
     </Box>

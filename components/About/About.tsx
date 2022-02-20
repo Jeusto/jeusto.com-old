@@ -58,7 +58,7 @@ export default function About() {
           </defs>
         </svg>
         <SlideWhenVisible threshold="0.11">
-          <NextImage className="squircle" src={me} alt="Segun Adebayo" />
+          <NextImage className="squircle" src={me} alt="Arhun Saday" />
         </SlideWhenVisible>
       </Box>
     </Flex>
