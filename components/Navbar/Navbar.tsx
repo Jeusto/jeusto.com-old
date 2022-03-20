@@ -24,7 +24,7 @@ import useTranslation from "next-translate/useTranslation";
 export default function Navbar() {
   const isLargerThan768 = useMediaQuery(768);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { t } = useTranslation("common");
+  const { t, lang } = useTranslation("common");
 
   const MobileNavbar = () => (
     <>
@@ -50,7 +50,7 @@ export default function Navbar() {
                 href="#featured"
               >
                 <Button variant="underline" fontSize="6xl">
-                  Featured
+                  {t("navbar_featured")}
                 </Button>
               </Link>
               <Link
@@ -59,7 +59,7 @@ export default function Navbar() {
                 href="#projects"
               >
                 <Button variant="underline" fontSize="6xl">
-                  Projects
+                  {t("navbar_projects")}
                 </Button>
               </Link>
             </VStack>
@@ -84,7 +84,8 @@ export default function Navbar() {
       top="0"
       left="0"
     >
-      <NextLink href="/" passHref>
+      {/* TODO: Remove this*/}
+      <NextLink href="/" locale={lang === "en" ? "fr" : "en"} passHref>
         <Box pt="0.3rem" cursor="pointer">
           <NextImage
             layout="fixed"
@@ -104,12 +105,12 @@ export default function Navbar() {
           </Link>
           <Link className="link link--featured" href="#featured">
             <Button variant="underline" fontSize="18px">
-              Featured
+              {t("navbar_featured")}
             </Button>
           </Link>
           <Link className="link link--projects" href="#projects">
             <Button variant="underline" fontSize="18px">
-              Projects
+              {t("navbar_projects")}
             </Button>
           </Link>
         </HStack>

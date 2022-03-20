@@ -3,9 +3,11 @@ import NextImage from "next/image";
 import me from "/public/me.jpg";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import SlideWhenVisible from "../../hooks/SlideWhenVisible";
+import useTranslation from "next-translate/useTranslation";
 
 export default function About() {
   const isMediumBreakpoint = useMediaQuery(768);
+  const { t, lang } = useTranslation("common");
 
   return (
     <Flex
@@ -21,27 +23,22 @@ export default function About() {
       >
         <SlideWhenVisible threshold="0.11">
           <Heading className="gradient_text1" fontSize="display2">
-            About me
+            {t("about_heading")}
           </Heading>
         </SlideWhenVisible>
         <SlideWhenVisible threshold="0.11">
           <Text fontSize="display3" mt="1rem">
-            {`Hey! I'm Arhun Saday, also known as Jeusto. I've been close to a 
-            computer since an early age and been passionate about it since then.`}
+            {t("about_text1")}
           </Text>
         </SlideWhenVisible>
         <SlideWhenVisible threshold="0">
           <Text fontSize="display3" mt="1rem">
-            {`I've been doing graphic design and 3D modeling as a hobby for a few years. Fast forward to today, I
-          study computer science and maths at the University of Strasbourg in
-          France.`}
+            {t("about_text2")}
           </Text>
         </SlideWhenVisible>
         <SlideWhenVisible threshold="0.11">
           <Text fontSize="display3" mt="1rem">
-            {`I do programming in various languages and technologies including Typescript, React, Nextjs, Python, Java and more.
-          I try to learn and get better every single day. I especially love designing and building interesting &
-          useful stuff with code.`}
+            {t("about_text3")}
           </Text>
         </SlideWhenVisible>
       </Box>

@@ -1,34 +1,28 @@
 import { Box, Heading, Text, Flex } from "@chakra-ui/react";
 import { FiGithub, FiTwitter, FiMail, FiLinkedin } from "react-icons/fi";
-import useMediaQuery from "../../hooks/useMediaQuery";
 import SlideWhenVisible from "../../hooks/SlideWhenVisible";
 import CustomLink from "./CustomLink";
+import useTranslation from "next-translate/useTranslation";
 
 export default function Landing() {
+  const { t, lang } = useTranslation("common");
+
   return (
     <Box mt="10rem">
       <SlideWhenVisible threshold="0.11">
-        <Heading
-          className="gradient_heading"
-          fontSize="display"
-        >{`Hi. I'm Jeusto.`}</Heading>
+        <Heading className="gradient_heading" fontSize="display">
+          {t("hero_name")}
+        </Heading>
       </SlideWhenVisible>
       <SlideWhenVisible threshold="0.11">
-        <Heading
-          className="gradient_heading"
-          mt="-1rem"
-          as="h1"
-          fontSize="display"
-        >
-          A Developer.
+        <Heading className="gradient_heading" as="h1" fontSize="display">
+          {t("hero_role")}
         </Heading>
       </SlideWhenVisible>
       <SlideWhenVisible threshold="0.11">
         <Box fontSize="display3" mt="2rem">
-          <Text>{`🚀 Exploring opportunities and side projects.`}</Text>
-          <Text>
-            {`🏫 Currently a student at the University of Strasbourg in France.`}
-          </Text>
+          <Text>{t("hero_text1")}</Text>
+          <Text>{t("hero_text2")}</Text>
         </Box>
       </SlideWhenVisible>
       <SlideWhenVisible threshold="0.11">
@@ -47,7 +41,7 @@ export default function Landing() {
           ></CustomLink>
           <CustomLink
             isFirst={false}
-            url="https://www.linkedin.com/in/asaday/"
+            url={t("hero_linkedinLink")}
             name="LinkedIn"
             icon={FiLinkedin}
           ></CustomLink>

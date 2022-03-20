@@ -68,7 +68,7 @@ export default function Contact() {
                 <Input fontSize="display4" type="text" />
               </FormControl>
               <FormControl id="message">
-                <FormLabel fontSize="display4"> Message</FormLabel>
+                <FormLabel fontSize="display4">Message</FormLabel>
                 <Textarea fontSize="display4" placeholder="" size="sm" />
               </FormControl>
             </VStack>

@@ -1,3 +1,17 @@
 {
-  "navbar_about": "About"
+  "navbar_about": "A propos",
+  "navbar_featured": "Vedette",
+  "navbar_projects": "Projets",
+  "hero_name": "Bonjour, je suis Jeusto.",
+  "hero_role": "Un développeur Full Stack.",
+  "hero_text1": "🚀 En train d'explorer des opportunités et des projets secondaires.",
+  "hero_text2": "🏫 Actuellement étudiant à l'Université de Strasbourg en France.",
+  "hero_linkedinLink": "https://www.linkedin.com/in/asaday",
+  "featured_heading": "Projet vedette: Silverbug",
+  "featured_text": "Arrive bientôt...",
+  "about_heading": "A propos de moi",
+  "about_text1": "Salut! Je suis Arhun Saday, également connu sous le nom de Jeusto. Je suis proche d'un ordinateur depuis mon plus jeune âge et j'en suis passionné depuis.",
+  "about_text2": "J'ai fait de la conception graphique et de la modélisation 3D comme passe-temps pendant quelques années et aujourd'hui, j'étudie l'informatique et les mathématiques à l'Université de Strasbourg, en France.",
+  "about_text3": "Je fais de la programmation dans différents langages et technologies, notamment Typescript, React, Nextjs, Python, Java et plus encore. J'essaie d'apprendre et de m'améliorer chaque jour. J'apprécie particulièrement concevoir et construire des choses intéressantes et utiles avec du code.",
+  "projects_heading": "D'autres projets que j'ai pu faire"
 }
