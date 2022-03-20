@@ -26,21 +26,23 @@ export default function Contact() {
   return (
     <>
       <IconButton
-        variant="ghost2"
+        colorScheme="blue"
         width="4rem"
         height="4rem"
         fontSize="2rem"
         borderRadius="999rem"
-        aria-label="Project repo"
+        aria-label="Contact me"
         position="fixed"
         bottom="1.5rem"
         right="1.5rem"
         icon={<FiMessageCircle />}
+        onClick={onOpen}
       />
       <Modal
         onClose={onClose}
         isOpen={isOpen}
         isCentered
+        size="2xl"
         blockScrollOnMount={false}
       >
         <ModalOverlay />
@@ -54,29 +56,25 @@ export default function Contact() {
           <ModalBody>
             <VStack>
               <FormControl id="name">
-                <FormLabel>Name</FormLabel>
-                <Input type="name" />
+                <FormLabel fontSize="display4">Name</FormLabel>
+                <Input fontSize="display4" type="name" />
               </FormControl>
               <FormControl id="email">
-                <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+                <FormLabel fontSize="display4">Email address</FormLabel>
+                <Input fontSize="display4" type="email" />
               </FormControl>
               <FormControl id="subject">
-                <FormLabel>Subject</FormLabel>
-                <Input type="text" />
+                <FormLabel fontSize="display4">Subject</FormLabel>
+                <Input fontSize="display4" type="text" />
               </FormControl>
-              <FormControl id="email">
-                <FormLabel>Email address</FormLabel>
-                <Input type="email" />
-              </FormControl>
-              <FormControl id="email">
-                <FormLabel>Message</FormLabel>
-                <Textarea placeholder="" size="sm" />
+              <FormControl id="message">
+                <FormLabel fontSize="display4"> Message</FormLabel>
+                <Textarea fontSize="display4" placeholder="" size="sm" />
               </FormControl>
             </VStack>
           </ModalBody>
           <ModalFooter>
-            <Button type="submit" variant="ghost">
+            <Button fontSize="display4" type="submit" variant="ghost">
               Send
             </Button>
           </ModalFooter>
