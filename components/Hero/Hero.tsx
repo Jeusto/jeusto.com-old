@@ -5,7 +5,7 @@ import CustomLink from "./CustomLink";
 import useTranslation from "next-translate/useTranslation";
 
 export default function Landing() {
-  const { t, lang } = useTranslation("common");
+  const { t } = useTranslation("common");
 
   return (
     <Box mt="10rem">
@@ -26,7 +26,7 @@ export default function Landing() {
         </Box>
       </SlideWhenVisible>
       <SlideWhenVisible threshold="0.11">
-        <Flex mt="1rem">
+        <Flex ml="-1.5" flexWrap="wrap" mt="1rem">
           <CustomLink
             isFirst={true}
             url="mailto:arhunsad@gmail.com"

@@ -7,7 +7,7 @@ import useTranslation from "next-translate/useTranslation";
 
 export default function About() {
   const isMediumBreakpoint = useMediaQuery(768);
-  const { t, lang } = useTranslation("common");
+  const { t } = useTranslation("common");
 
   return (
     <Flex

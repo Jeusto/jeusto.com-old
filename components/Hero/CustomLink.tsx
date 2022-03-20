@@ -10,7 +10,6 @@ type CustomLinkProps = {
 };
 
 export default function CustomLink({
-  isFirst,
   url,
   name,
   icon,
@@ -18,7 +17,7 @@ export default function CustomLink({
   const isLgBreakpoint = useMediaQuery(1024);
 
   return (
-    <Link ml={!isFirst ? "0.7rem" : "0rem"} href={url} isExternal>
+    <Link m="1.5" href={url} isExternal>
       <Button
         variant="ghost"
         fontSize={isLgBreakpoint ? "16px" : "14px"}

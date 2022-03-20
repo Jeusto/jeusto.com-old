@@ -3,7 +3,7 @@ import SlideWhenVisible from "../../hooks/SlideWhenVisible";
 import useTranslation from "next-translate/useTranslation";
 
 export default function Featured() {
-  const { t, lang } = useTranslation("common");
+  const { t } = useTranslation("common");
 
   return (
     <Box id="featured" pt="10rem">
