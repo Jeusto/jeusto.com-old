@@ -19,10 +19,12 @@ import NextImage from "next/image";
 import NextLink from "next/link";
 import logo from "/public/logo.svg";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import useTranslation from "next-translate/useTranslation";
 
 export default function Navbar() {
   const isLargerThan768 = useMediaQuery(768);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { t } = useTranslation("common");
 
   const MobileNavbar = () => (
     <>
@@ -39,7 +41,7 @@ export default function Navbar() {
                 href="#about"
               >
                 <Button variant="underline" fontSize="6xl">
-                  About
+                  {t("navbar_about")}
                 </Button>
               </Link>
               <Link
@@ -97,7 +99,7 @@ export default function Navbar() {
         <HStack spacing="0.75rem">
           <Link className="link link--about" href="#about">
             <Button variant="underline" fontSize="18px">
-              About
+              {t("navbar_about")}
             </Button>
           </Link>
           <Link className="link link--featured" href="#featured">
