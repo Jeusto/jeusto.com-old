@@ -3,7 +3,6 @@ import { IconType } from "react-icons/lib";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
 type CustomLinkProps = {
-  isFirst: boolean;
   url: string;
   name: string;
   icon: IconType;

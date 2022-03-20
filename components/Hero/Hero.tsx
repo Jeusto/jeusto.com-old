@@ -1,5 +1,11 @@
 import { Box, Heading, Text, Flex } from "@chakra-ui/react";
-import { FiGithub, FiTwitter, FiMail, FiLinkedin } from "react-icons/fi";
+import {
+  FiGithub,
+  FiTwitter,
+  FiMail,
+  FiLinkedin,
+  FiLink,
+} from "react-icons/fi";
 import SlideWhenVisible from "../../hooks/SlideWhenVisible";
 import CustomLink from "./CustomLink";
 import useTranslation from "next-translate/useTranslation";
@@ -28,28 +34,29 @@ export default function Landing() {
       <SlideWhenVisible threshold="0.11">
         <Flex ml="-1.5" flexWrap="wrap" mt="1rem">
           <CustomLink
-            isFirst={true}
             url="mailto:arhunsad@gmail.com"
             name="Email"
             icon={FiMail}
           ></CustomLink>
           <CustomLink
-            isFirst={false}
             url="https://github.com/Jeusto"
             name="Github"
             icon={FiGithub}
           ></CustomLink>
           <CustomLink
-            isFirst={false}
             url={t("hero_linkedinLink")}
             name="LinkedIn"
             icon={FiLinkedin}
           ></CustomLink>
           <CustomLink
-            isFirst={false}
             url="https://twitter.com/Jeustoo"
             name="Twitter"
             icon={FiTwitter}
+          ></CustomLink>
+          <CustomLink
+            url="https://linktr.ee/Jeusto"
+            name={t("hero_otherLinks")}
+            icon={FiLink}
           ></CustomLink>
         </Flex>
       </SlideWhenVisible>

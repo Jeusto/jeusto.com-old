@@ -96,7 +96,7 @@ const overrides = extendTheme({
     "6xl": fluidType(24, 48),
     "7xl": fluidType(32, 64),
     "8xl": fluidType(36, 72),
-    display: fluidType(65, 124),
+    display: fluidType(50, 92),
     display2: fluidType(24, 36),
     display3: fluidType(16, 24),
   },

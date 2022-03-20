@@ -20,6 +20,7 @@ import NextLink from "next/link";
 import logo from "/public/logo.svg";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import useTranslation from "next-translate/useTranslation";
+import Flag from "./Flag";
 
 export default function Navbar() {
   const isLargerThan768 = useMediaQuery(768);
@@ -84,8 +85,7 @@ export default function Navbar() {
       top="0"
       left="0"
     >
-      {/* TODO: Remove this*/}
-      <NextLink href="/" locale={lang === "en" ? "fr" : "en"} passHref>
+      <NextLink href="/" locale={lang === "fr" ? "fr" : "en"} passHref>
         <Box pt="0.3rem" cursor="pointer">
           <NextImage
             layout="fixed"
@@ -113,6 +113,11 @@ export default function Navbar() {
               {t("navbar_projects")}
             </Button>
           </Link>
+          <NextLink href="/" locale={lang === "en" ? "fr" : "en"} passHref>
+            <Box pt="0.3rem" cursor="pointer">
+              <Flag></Flag>
+            </Box>
+          </NextLink>
         </HStack>
       ) : (
         <Icon
