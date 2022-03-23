@@ -45,10 +45,10 @@ export default function Index({ projects }: IndexProps) {
           content="Developer in France, an undergraduate student at the University of Strasbourg."
         />
       </Head>
-      <Navbar></Navbar>
-      <Hero></Hero>
-      <About></About>
-      <Featured></Featured>
+      <Navbar />
+      <Hero />
+      <About />
+      <Featured />
       <Projects projects={projects}></Projects>
     </>
   );
