@@ -45,88 +45,66 @@ export default function Card({
 }: CardProps) {
   const isLgBreakPoint = useMediaQuery(1024);
 
-  const getTag = (tag: string) => {
-    let tagValues = {
-      text: tag,
-      backgroundColor: "#3a3b3c",
-      textColor: "#e2e8f0",
-      icon: HiOutlineCode,
-    };
-    switch (tag) {
-      case "React":
-        tagValues.backgroundColor = "#23383d";
-        tagValues.textColor = "#41c0d9";
-        tagValues.icon = FaReact;
-        break;
-      case "Typescript":
-        tagValues.backgroundColor = "#243140";
-        tagValues.textColor = "#59a8ff";
-        tagValues.icon = SiTypescript;
-        break;
-      case "Javascript":
-        tagValues.backgroundColor = "#3b371c";
-        tagValues.textColor = "#d4c22f";
-        tagValues.icon = SiJavascript;
-        break;
-      case "Next.js":
-        tagValues.backgroundColor = "#121212";
-        tagValues.textColor = "#e2e8f0";
-        tagValues.icon = IoLogoVercel;
-        break;
-      case "Python":
-        tagValues.backgroundColor = "#40371a";
-        tagValues.textColor = "#d6b038";
-        tagValues.icon = FaPython;
-        break;
-      case "Sass":
-        tagValues.backgroundColor = "#47313c";
-        tagValues.textColor = "#fa78b9";
-        tagValues.icon = FaSass;
-        break;
-      case "Php":
-        tagValues.backgroundColor = "#37394a";
-        tagValues.textColor = "#a2abfa";
-        tagValues.icon = SiPhp;
-        break;
-      case "Java":
-        tagValues.backgroundColor = "#3d1d1d";
-        tagValues.textColor = "#fc686b";
-        tagValues.icon = FaJava;
-        break;
-      case "Sqlite":
-        tagValues.backgroundColor = "#2b3540";
-        tagValues.textColor = "#aad0fa";
-        tagValues.icon = FaDatabase;
-        break;
-      case "MongoDB":
-        tagValues.backgroundColor = "#283b1e";
-        tagValues.textColor = "#7ac253";
-        tagValues.icon = SiMongodb;
-        break;
-      case "Flask":
-        tagValues.backgroundColor = "#121212";
-        tagValues.textColor = "#e2e8f0";
-        tagValues.icon = SiFlask;
-        break;
-      default:
-        break;
+  const tags_list = [
+    {
+      name: "Typescript",
+      bg_color: "#243140",
+      color: "#59a8ff",
+      icon: SiTypescript,
+    },
+    {
+      name: "Javascript",
+      bg_color: "#3b371c",
+      color: "#d4c22f",
+      icon: SiJavascript,
+    },
+    {
+      name: "Next.js",
+      bg_color: "#121212",
+      color: "#e2e8f0",
+      icon: IoLogoVercel,
+    },
+    { name: "React", bg_color: "#41c0d9", color: "#41c0d9", icon: FaReact },
+    { name: "Python", bg_color: "#40371a", color: "#d6b038", icon: FaPython },
+    { name: "Sass", bg_color: "#47313c", color: "#fa78b9", icon: FaSass },
+    { name: "Php", bg_color: "#37394a", color: "#a2abfa", icon: SiPhp },
+    { name: "Java", bg_color: "#3d1d1d", color: "#fc686b", icon: FaJava },
+    { name: "Sqlite", bg_color: "#2b3540", color: "#aad0fa", icon: FaDatabase },
+    { name: "MongoDB", bg_color: "#283b1e", color: "#7ac253", icon: SiMongodb },
+    { name: "Flask", bg_color: "#121212", color: "#e2e8f0", icon: SiFlask },
+  ];
+
+  const getTag = (tag_name: string) => {
+    let t = tags_list.find((t) => t.name === tag_name);
+
+    if (t) {
+      return t;
     }
-    return tagValues;
+
+    return (t = {
+      name: tag_name,
+      bg_color: "#3a3b3c",
+      color: "#e2e8f0",
+      icon: HiOutlineCode,
+    });
   };
 
-  const Tags = tags.map((el) => (
-    <Tag
-      fontSize={isLgBreakPoint ? "1rem" : "0.8rem"}
-      p={isLgBreakPoint ? "0.5rem" : "0.4rem"}
-      size={isLgBreakPoint ? "md" : "sm"}
-      key={el}
-      bg={getTag(el).backgroundColor}
-      color={getTag(el).textColor}
-    >
-      <TagLeftIcon as={getTag(el).icon} />
-      <TagLabel>{el}</TagLabel>
-    </Tag>
-  ));
+  const Tags = tags.map((el) => {
+    let t = getTag(el);
+    return (
+      <Tag
+        fontSize={isLgBreakPoint ? "1rem" : "0.8rem"}
+        p={isLgBreakPoint ? "0.5rem" : "0.4rem"}
+        size={isLgBreakPoint ? "md" : "sm"}
+        key={el}
+        bg={t.bg_color}
+        color={t.color}
+      >
+        <TagLeftIcon as={t.icon} />
+        <TagLabel>{el}</TagLabel>
+      </Tag>
+    );
+  });
 
   return (
     <SlideWhenVisible threshold="0.11">
