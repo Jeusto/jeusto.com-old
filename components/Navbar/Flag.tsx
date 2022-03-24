@@ -13,7 +13,7 @@ export default function CustomLink() {
           ? "Switch the website to french"
           : "Passer le site en anglais"
       }
-      fontSize="md"
+      fontSize="display3"
     >
       <Box pt="0.3rem" cursor="pointer">
         <NextImage

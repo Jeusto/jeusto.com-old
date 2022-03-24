@@ -63,6 +63,11 @@ export default function Navbar() {
                   {t("navbar_projects")}
                 </Button>
               </Link>
+              <NextLink href="/" locale={lang === "en" ? "fr" : "en"} passHref>
+                <Box onClick={onClose} pt="0.3rem" cursor="pointer">
+                  <Flag></Flag>
+                </Box>
+              </NextLink>
             </VStack>
           </DrawerBody>
         </DrawerContent>
