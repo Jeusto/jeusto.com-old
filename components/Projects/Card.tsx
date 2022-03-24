@@ -64,7 +64,7 @@ export default function Card({
       color: "#e2e8f0",
       icon: IoLogoVercel,
     },
-    { name: "React", bg_color: "#41c0d9", color: "#41c0d9", icon: FaReact },
+    { name: "React", bg_color: "#23383d", color: "#41c0d9", icon: FaReact },
     { name: "Python", bg_color: "#40371a", color: "#d6b038", icon: FaPython },
     { name: "Sass", bg_color: "#47313c", color: "#fa78b9", icon: FaSass },
     { name: "Php", bg_color: "#37394a", color: "#a2abfa", icon: SiPhp },
