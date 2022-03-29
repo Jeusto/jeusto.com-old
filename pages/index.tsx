@@ -60,7 +60,6 @@ export default function Index({ projects }: IndexProps) {
           content="Developer in France, an undergraduate computer science student at the University of Strasbourg."
         />
       </Head>
-      <Contact />
       <Navbar />
       <Hero />
       <About />
