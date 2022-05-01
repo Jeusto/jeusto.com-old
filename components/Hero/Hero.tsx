@@ -49,11 +49,6 @@ export default function Landing() {
             icon={FiLinkedin}
           ></CustomLink>
           <CustomLink
-            url="https://twitter.com/Jeustoo"
-            name="Twitter"
-            icon={FiTwitter}
-          ></CustomLink>
-          <CustomLink
             url="https://linktr.ee/Jeusto"
             name={t("hero_otherLinks")}
             icon={FiLink}

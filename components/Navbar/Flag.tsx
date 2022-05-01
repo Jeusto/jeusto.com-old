@@ -20,7 +20,7 @@ export default function CustomLink() {
           layout="fixed"
           width="28"
           height="28"
-          src={lang === "en" ? frFlag : usFlag}
+          src={lang === "en" ? usFlag : frFlag}
         ></NextImage>
       </Box>
     </Tooltip>
