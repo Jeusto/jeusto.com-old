@@ -11,6 +11,7 @@ import {
   Heading,
   Link,
   AspectRatio,
+  Tooltip,
 } from "@chakra-ui/react";
 import {
   SiPhp,
@@ -131,27 +132,32 @@ export default function Card({
               <Heading fontSize="display2">{title}</Heading>
               <HStack spacing="0.5rem">
                 {demoLink !== "" ? (
-                  <Link href={demoLink} isExternal>
+                  <Tooltip label={"Demo"} fontSize="display3">
+                    <Link href={demoLink} isExternal>
+                      <IconButton
+                        variant="ghost"
+                        fontSize="1.5rem"
+                        borderRadius="0.5rem"
+                        aria-label="Project demo"
+                        icon={<FiExternalLink />}
+                      />
+                    </Link>
+                  </Tooltip>
+                ) : (
+                  ""
+                )}
+
+                <Tooltip label={"Source code"} fontSize="display3">
+                  <Link href={repoLink} isExternal>
                     <IconButton
                       variant="ghost"
                       fontSize="1.5rem"
                       borderRadius="0.5rem"
-                      aria-label="Project demo"
-                      icon={<FiExternalLink />}
+                      aria-label="Project repo"
+                      icon={<FiGithub />}
                     />
                   </Link>
-                ) : (
-                  ""
-                )}
-                <Link href={repoLink} isExternal>
-                  <IconButton
-                    variant="ghost"
-                    fontSize="1.5rem"
-                    borderRadius="0.5rem"
-                    aria-label="Project repo"
-                    icon={<FiGithub />}
-                  />
-                </Link>
+                </Tooltip>
               </HStack>
             </Flex>
             <HStack p="1rem" pt="0rem">
