@@ -114,7 +114,7 @@ export default function Card({
         boxShadow="sm"
         className="project_card"
         bg="cardBackground"
-        borderRadius="1rem"
+        borderRadius="0.6rem"
         overflow="hidden"
         flexDirection="column"
         height="100%"
