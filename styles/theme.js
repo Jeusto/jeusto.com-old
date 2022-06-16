@@ -21,6 +21,7 @@ const colors = {
 const fonts = {
   body: "Inter",
   heading: "Abhaya Libre",
+  code: "Jetbrains Mono, monospace",
 };
 const breakpoints = createBreakpoints({
   base: "0px",

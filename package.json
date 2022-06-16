@@ -14,6 +14,7 @@
     "@emotion/styled": "^11",
     "@fontsource/abhaya-libre": "^4.4.5",
     "@fontsource/inter": "^4.5.0",
+    "@fontsource/jetbrains-mono": "^4.5.9",
     "@next/react-refresh-utils": "^11.0.1",
     "framer-motion": "^4",
     "mongodb": "^3.6.9",

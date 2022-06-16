@@ -93,6 +93,7 @@ export default function Card({
     let t = getTag(el);
     return (
       <Tag
+        fontFamily={["JetBrains Mono", "mono"]}
         fontSize={isLgBreakPoint ? "1rem" : "0.8rem"}
         p={isLgBreakPoint ? "0.5rem" : "0.4rem"}
         size={isLgBreakPoint ? "md" : "sm"}

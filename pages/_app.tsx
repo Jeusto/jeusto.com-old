@@ -1,5 +1,6 @@
 import "@fontsource/abhaya-libre";
 import "@fontsource/inter";
+import "@fontsource/jetbrains-mono";
 import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
 import customTheme from "../styles/theme";
