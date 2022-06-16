@@ -29,7 +29,7 @@ export default function Navbar() {
 
   const MobileNavbar = () => (
     <>
-      <Drawer isOpen={isOpen} placement="right" size="full" onClose={onClose}>
+      <Drawer isOpen={isOpen} placement="right" size="xs" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent bg="background">
           <DrawerCloseButton variant="ghost" />
