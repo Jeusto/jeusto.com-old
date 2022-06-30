@@ -1,4 +1,5 @@
 import {
+  Wrap,
   Flex,
   Box,
   HStack,
@@ -160,9 +161,9 @@ export default function Card({
                 </Tooltip>
               </HStack>
             </Flex>
-            <HStack p="1rem" pt="0rem">
+            <Wrap p="1rem" pt="0rem">
               {Tags}
-            </HStack>
+            </Wrap>
           </Box>
           <Flex
             borderTop="1px solid #2c2d2e"
