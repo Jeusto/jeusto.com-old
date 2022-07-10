@@ -4,9 +4,8 @@ import Hero from "../components/Hero/Hero";
 import About from "../components/About/About";
 import Featured from "../components/Featured/Featured";
 import Projects from "../components/Projects/Projects";
-import Contact from "../components/Contact/Contact";
-import { connectToDatabase } from "../util/mongodb";
-import { useState, useEffect } from "react";
+import fsPromises from "fs/promises";
+import path from "path";
 
 type IndexProps = {
   projects: object;
@@ -69,14 +68,13 @@ export default function Index({ projects }: IndexProps) {
   );
 }
 
-export async function getServerSideProps() {
-  const { db } = await connectToDatabase();
-
-  const projects = await db.collection("projects").find({}).toArray();
+export async function getStaticProps() {
+  const filePath = path.resolve(process.cwd(), "data/projects.json");
+  const projects = await fsPromises.readFile(filePath, "utf8");
 
   return {
     props: {
-      projects: JSON.parse(JSON.stringify(projects)),
+      projects: JSON.parse(projects),
     },
   };
 }
