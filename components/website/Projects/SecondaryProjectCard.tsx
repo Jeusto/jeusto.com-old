@@ -75,7 +75,6 @@ export default function MainProjectCard({
                   <Link href={demoLink} isExternal tabIndex={-1}>
                     <IconButton
                       variant="ghost"
-                      borderRadius="md"
                       aria-label="Project demo"
                       icon={<FiExternalLink size={"1.4em"} />}
                     />
@@ -84,7 +83,6 @@ export default function MainProjectCard({
                 <Link href={repoLink} isExternal tabIndex={-1}>
                   <IconButton
                     variant="ghost"
-                    borderRadius="md"
                     aria-label="Project repo"
                     icon={<FiGithub size={"1.4em"} />}
                   />

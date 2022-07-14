@@ -15,5 +15,7 @@
   "home_secondaryProjectsHeading": "Autres projets notables",
   "blog_description": "J'écris occasionnellement mes réflexions sur la technologie, la productivité et le design.",
   "404_title": "Erreur 404. Page non trouvée.",
-  "404_goHome": "Revenir à l'accueil"
+  "404_goHome": "Revenir à l'accueil",
+  "projects_title": "Projets personnels",
+  "projects_description": "Voici quelques projets que j'ai réalisé."
 }

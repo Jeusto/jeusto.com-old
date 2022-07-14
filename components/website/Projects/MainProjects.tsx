@@ -8,11 +8,7 @@ export default function MainProjects({ projects }: { projects: Project[] }) {
 
   return (
     <Box id="projects">
-      <SimpleGrid
-        className="projects_grid"
-        columns={{ base: 1, lg: 2 }}
-        spacing="8"
-      >
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} spacing="5">
         {Object.values(projects)
           .filter((project) => project.isSecondary === false)
           .sort(function (a, b) {

@@ -43,7 +43,7 @@ export default function MainProjectCard({
         height="100%"
         width="full"
         transition={"all 150ms ease-in-out"}
-        p="5"
+        p="3"
         borderWidth="1px"
         borderColor={useColorModeValue("gray.200", "gray.800")}
         _hover={{
@@ -53,7 +53,7 @@ export default function MainProjectCard({
       >
         {image && (
           <AspectRatio ratio={1920 / 1080}>
-            <Box boxShadow="xs" borderRadius="md">
+            <Box boxShadow="xs" borderRadius="lg">
               <Image
                 layout="fill"
                 objectFit={"cover"}
@@ -78,7 +78,6 @@ export default function MainProjectCard({
                 <Link href={demoLink} isExternal tabIndex={-1}>
                   <IconButton
                     variant="ghost"
-                    borderRadius="md"
                     aria-label="Project demo"
                     icon={<FiExternalLink size={"1.4em"} />}
                   />
@@ -87,7 +86,6 @@ export default function MainProjectCard({
               <Link href={repoLink} isExternal tabIndex={-1}>
                 <IconButton
                   variant="ghost"
-                  borderRadius="md"
                   aria-label="Project repo"
                   icon={<FiGithub size={"1.4em"} />}
                 />

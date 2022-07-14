@@ -15,5 +15,7 @@
   "home_secondaryProjectsHeading": "Other noteworthy projects",
   "blog_description": "I oc­ca­sion­ally pen down my thoughts about tech­nol­ogy, pro­duc­tiv­ity, and de­sign.",
   "404_title": "Error 404. Page not found.",
-  "404_goHome": "Go back home"
+  "404_goHome": "Go back home",
+  "projects_title": "Personal projects",
+  "projects_description": "Here's some projects I've built."
 }

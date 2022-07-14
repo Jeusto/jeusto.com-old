@@ -32,14 +32,14 @@ export default function Blog({ posts }: { posts: Post[] }) {
         </Heading>
       </SlideWhenVisible>
       <SlideWhenVisible threshold="0.11">
-        <Box w="90%">
-          <Text mt="1rem">
+        <Box mt="3" mb="5" w="90%">
+          <Text>
             I oc­ca­sion­ally pen down my thoughts about tech­nol­ogy,
             pro­duc­tiv­ity, and de­sign.
           </Text>
         </Box>
       </SlideWhenVisible>
-      <Box mt="10">
+      <Box>
         <VStack spacing="5" w="full" alignItems="stretch">
           <PostsList posts={posts} maxCount={999} />
         </VStack>
