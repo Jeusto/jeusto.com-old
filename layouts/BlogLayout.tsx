@@ -72,7 +72,7 @@ export default function BlogLayout({ children, frontmatter }: BlogProps) {
                     </HStack>
                   </Wrap>
                 </VStack>
-                <AspectRatio my="5" ratio={1920 / 1080}>
+                <AspectRatio my="5" ratio={1920 / 720}>
                   <Image
                     boxShadow="xs"
                     borderRadius="md"
