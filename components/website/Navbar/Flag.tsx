@@ -12,7 +12,6 @@ export default function CustomLink({ onClick }) {
     <NextLink href="/" locale={lang === "en" ? "fr" : "en"} passHref>
       <Box cursor="pointer">
         <Tooltip
-          fontSize="md"
           label={
             lang === "en"
               ? "Switch the website to french"

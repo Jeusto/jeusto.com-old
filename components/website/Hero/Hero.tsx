@@ -6,8 +6,9 @@ import {
   Link,
   HStack,
   useColorModeValue,
+  Tooltip,
 } from "@chakra-ui/react";
-import { FiYoutube, FiGithub, FiMail, FiLinkedin } from "react-icons/fi";
+import { FiGithub, FiMail, FiLinkedin } from "react-icons/fi";
 import SlideWhenVisible from "@/hooks/SlideWhenVisible";
 import useTranslation from "next-translate/useTranslation";
 
@@ -39,9 +40,11 @@ export default function Landing() {
             href={"mailto:arhunsad@gmail.com"}
             isExternal
           >
-            <Button variant="ghost" leftIcon={<FiMail size={"1.4em"} />}>
-              Email
-            </Button>
+            <Tooltip label="arhunsad@gmail.com">
+              <Button variant="ghost" leftIcon={<FiMail size={"1.4em"} />}>
+                Email
+              </Button>
+            </Tooltip>
           </Link>
           <Link
             tabIndex={-1}
@@ -56,16 +59,6 @@ export default function Landing() {
           <Link tabIndex={-1} m="1.5" href={t("hero_linkedinLink")} isExternal>
             <Button variant="ghost" leftIcon={<FiLinkedin size={"1.4em"} />}>
               LinkedIn
-            </Button>
-          </Link>
-          <Link
-            tabIndex={-1}
-            m="1.5"
-            href="https://www.youtube.com/c/Jeusto"
-            isExternal
-          >
-            <Button variant="ghost" leftIcon={<FiYoutube size={"1.4em"} />}>
-              Youtube
             </Button>
           </Link>
         </HStack>
