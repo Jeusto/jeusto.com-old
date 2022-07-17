@@ -67,7 +67,7 @@ export default function Navbar() {
                 }}
                 borderRadius="lg"
                 variant="ghost"
-                icon={colorMode === "light" ? <FiMoon /> : <FiSun />}
+                icon={colorMode === "dark" ? <FiMoon /> : <FiSun />}
               />
               <Flag onClick={onClose} />
             </VStack>
@@ -146,7 +146,7 @@ export default function Navbar() {
                 }}
                 borderRadius="lg"
                 variant="ghost"
-                icon={colorMode === "light" ? <FiMoon /> : <FiSun />}
+                icon={colorMode === "dark" ? <FiMoon /> : <FiSun />}
               />
               <Flag onClick={onClose} />
             </HStack>
