@@ -76,7 +76,7 @@ export async function getStaticProps({ params }: Params) {
         // open external links in new tab
         rehypeExternalLinks,
         // title for code blocks (has to come before `rehypePrism`)
-        // rehypeCodeTitles,
+        rehypeCodeTitles,
         // syntax highlight
         rehypePrism,
         // table of contents

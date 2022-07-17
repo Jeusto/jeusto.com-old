@@ -75,6 +75,12 @@ const styles = {
         },
       },
     },
+    ".rehype-code-title": {
+      marginBottom: "-1rem",
+      marginTop: "1rem",
+      fontFamily: fonts.mono,
+      opacity: 0.6,
+    },
   }),
 };
 const colors = {
