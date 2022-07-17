@@ -11,9 +11,9 @@ import rehypePrism from "rehype-prism-plus";
 import remarkGfm from "remark-gfm";
 import remarkHeadings from "remark-autolink-headings";
 import remarkSlug from "remark-slug";
-import remarkTableofContents from "remark-toc";
 import remarkUnwrapImages from "remark-unwrap-images";
 import rehypeExternalLinks from "rehype-external-links";
+import rehypeToc from "rehype-toc";
 
 interface PostProps {
   code: string;
@@ -68,9 +68,6 @@ export async function getStaticProps({ params }: Params) {
         remarkSlug,
         // add links to headings
         remarkHeadings,
-        // generates table of contents from headings
-        // `tight` removes <p> from <li> when nested
-        [remarkTableofContents, { tight: true }],
         // remove paragraph around images
         remarkUnwrapImages,
       ];
@@ -79,9 +76,11 @@ export async function getStaticProps({ params }: Params) {
         // open external links in new tab
         rehypeExternalLinks,
         // title for code blocks (has to come before `rehypePrism`)
-        rehypeCodeTitles,
+        // rehypeCodeTitles,
         // syntax highlight
         rehypePrism,
+        // table of contents
+        // rehypeToc,
       ];
       return options;
     },
