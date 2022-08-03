@@ -1,18 +1,26 @@
 import Hero from "@/components/website/Hero/Hero";
 import PostsList from "@/components/website/Posts/PostsList";
 import MainProjects from "@/components/website/Projects/MainProjects";
-import SecondaryProjects from "@/components/website/Projects/SecondaryProjects";
 import ViewAllButton from "@/components/website/ViewAllButton";
 import SectionTitle from "@/components/website/SectionTitle";
 import { Flex } from "@chakra-ui/react";
 import useTranslation from "next-translate/useTranslation";
 import { getAllPosts, getAllProjects } from "@/utils/getData";
 import { Project, Post } from "@/utils/types";
+import dynamic from "next/dynamic";
+import SlideWhenVisible from "@/hooks/SlideWhenVisible";
 
 interface IndexProps {
   projects: Project[];
   posts: Post[];
 }
+
+const SecondaryProjects = dynamic(
+  () => import("@/components/website/Projects/SecondaryProjects"),
+  {
+    ssr: false,
+  }
+);
 
 export default function Index({ projects, posts }: IndexProps) {
   const { t } = useTranslation("common");
@@ -29,12 +37,18 @@ export default function Index({ projects, posts }: IndexProps) {
         mb="20"
       >
         <Hero />
-        <SectionTitle title={t("home_blogHeading")} />{" "}
+        <SlideWhenVisible threshold="0.11">
+          <SectionTitle title={t("home_blogHeading")} />{" "}
+        </SlideWhenVisible>
         <PostsList posts={posts} maxCount={2} />
         <ViewAllButton text={t("button_viewAllPosts")} url="/blog" />
-        <SectionTitle title={t("home_mainProjectsHeading")} />
+        <SlideWhenVisible threshold="0.11">
+          <SectionTitle title={t("home_mainProjectsHeading")} />
+        </SlideWhenVisible>
         <MainProjects projects={projects} />
-        <SectionTitle title={t("home_secondaryProjectsHeading")} />
+        <SlideWhenVisible threshold="0.11">
+          <SectionTitle title={t("home_secondaryProjectsHeading")} />
+        </SlideWhenVisible>
         <SecondaryProjects projects={projects} />
         <ViewAllButton text={t("button_viewAllProjects")} url="/projects" />
       </Flex>

@@ -17,52 +17,46 @@ export default function Landing() {
 
   return (
     <Box>
-      <SlideWhenVisible threshold="0.11">
-        <Heading
-          color={useColorModeValue("teal.500", "teal.200")}
-          as="h1"
-          size="2xl"
+      <Heading
+        color={useColorModeValue("teal.500", "teal.200")}
+        as="h1"
+        size="2xl"
+      >
+        {t("hero_name")}
+      </Heading>
+      <Box mt="5">
+        <Text>{t("hero_description")}</Text>
+        <Text mt="1">{t("hero_description2")}</Text>
+      </Box>
+      <HStack mt="3" ml="-5" flexWrap="wrap">
+        <Link
+          tabIndex={-1}
+          m="1.5"
+          href={"mailto:arhunsad@gmail.com"}
+          isExternal
         >
-          {t("hero_name")}
-        </Heading>
-      </SlideWhenVisible>
-      <SlideWhenVisible threshold="0.11">
-        <Box mt="5">
-          <Text>{t("hero_description")}</Text>
-          <Text mt="1">{t("hero_description2")}</Text>
-        </Box>
-      </SlideWhenVisible>
-      <SlideWhenVisible threshold="0.11">
-        <HStack mt="3" ml="-5" flexWrap="wrap">
-          <Link
-            tabIndex={-1}
-            m="1.5"
-            href={"mailto:arhunsad@gmail.com"}
-            isExternal
-          >
-            <Tooltip label="arhunsad@gmail.com">
-              <Button variant="ghost" leftIcon={<FiMail size={"1.4em"} />}>
-                Email
-              </Button>
-            </Tooltip>
-          </Link>
-          <Link
-            tabIndex={-1}
-            m="1.5"
-            href={"https://github.com/Jeusto/"}
-            isExternal
-          >
-            <Button variant="ghost" leftIcon={<FiGithub size={"1.4em"} />}>
-              Github
+          <Tooltip label="arhunsad@gmail.com">
+            <Button variant="ghost" leftIcon={<FiMail size={"1.4em"} />}>
+              Email
             </Button>
-          </Link>
-          <Link tabIndex={-1} m="1.5" href={t("hero_linkedinLink")} isExternal>
-            <Button variant="ghost" leftIcon={<FiLinkedin size={"1.4em"} />}>
-              LinkedIn
-            </Button>
-          </Link>
-        </HStack>
-      </SlideWhenVisible>
+          </Tooltip>
+        </Link>
+        <Link
+          tabIndex={-1}
+          m="1.5"
+          href={"https://github.com/Jeusto/"}
+          isExternal
+        >
+          <Button variant="ghost" leftIcon={<FiGithub size={"1.4em"} />}>
+            Github
+          </Button>
+        </Link>
+        <Link tabIndex={-1} m="1.5" href={t("hero_linkedinLink")} isExternal>
+          <Button variant="ghost" leftIcon={<FiLinkedin size={"1.4em"} />}>
+            LinkedIn
+          </Button>
+        </Link>
+      </HStack>
     </Box>
   );
 }

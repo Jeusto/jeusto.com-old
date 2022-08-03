@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.2.3",
@@ -15,7 +18,9 @@
     "@fontsource/abhaya-libre": "^4.4.5",
     "@fontsource/inter": "^4.5.0",
     "@fontsource/jetbrains-mono": "^4.5.9",
+    "@next/bundle-analyzer": "^12.2.3",
     "@next/react-refresh-utils": "^11.0.1",
+    "cross-env": "^7.0.3",
     "esbuild": "^0.14.49",
     "framer-motion": "^4",
     "fs": "^0.0.1-security",
