@@ -19,8 +19,8 @@ export default function Blog({ posts }: { posts: Post[] }) {
       m="auto"
       px="10"
       maxW="1000px"
+      minH="100vh"
       mb="20"
-      overflowY="scroll"
     >
       <Heading
         color={useColorModeValue("teal.500", "teal.200")}
