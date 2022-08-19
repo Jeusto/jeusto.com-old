@@ -1,6 +1,5 @@
 import {
   Box,
-  AspectRatio,
   Wrap,
   VStack,
   HStack,

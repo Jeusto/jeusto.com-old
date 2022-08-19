@@ -55,6 +55,7 @@ const styles = {
     html: {
       scrollBehavior: "smooth",
       fontSize: "16px",
+      scrollPaddingTop: "5rem",
     },
     body: {
       color: mode("gray.900", "gray.100")(props),

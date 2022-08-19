@@ -72,10 +72,10 @@ const CustomImage = ({ src, alt, ...props }) => {
 };
 
 const mdxComponents = {
-  h1: (props: any) => <Heading as="h1" size="xl" my={4} {...props} />,
-  h2: (props: any) => <Heading as="h2" size="lg" my={4} {...props} />,
-  h3: (props: any) => <Heading as="h3" size="md" my={4} {...props} />,
-  h4: (props: any) => <Heading as="h4" size="sm" my={4} {...props} />,
+  h1: (props: any) => <Heading as="h1" mt="7" mb="3" size="xl" {...props} />,
+  h2: (props: any) => <Heading as="h2" mt="7" mb="3" size="lg" {...props} />,
+  h3: (props: any) => <Heading as="h3" mt="7" mb="3" size="md" {...props} />,
+  h4: (props: any) => <Heading as="h4" mt="7" mb="3" size="sm" {...props} />,
 
   p: (props) => <Text as="p" {...props} />,
   a: (props: any) => <Link variant="blog" {...props} />,

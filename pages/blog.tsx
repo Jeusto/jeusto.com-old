@@ -31,8 +31,8 @@ export default function Blog({ posts }: { posts: Post[] }) {
       </Heading>
       <Box mt="3" mb="5" w="90%">
         <Text>
-          I oc­ca­sion­ally pen down my thoughts about tech­nol­ogy,
-          pro­duc­tiv­ity, and de­sign.
+          I oc­ca­sion­ally pen down my thoughts about various topics like
+          programming, tech­nol­ogy, pro­duc­tiv­ity, and de­sign.
         </Text>
       </Box>
       <Box>
