@@ -79,8 +79,7 @@ export default function Navbar() {
 
   return (
     <Box
-      pos="sticky"
-      top="0"
+      pos="fixed"
       w="100%"
       bg={useColorModeValue("gray.50", "gray.850")}
       zIndex={99}

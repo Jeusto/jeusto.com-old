@@ -19,7 +19,6 @@ export default function Blog({ posts }: { posts: Post[] }) {
       m="auto"
       px="10"
       maxW="1000px"
-      minH="100vh"
       mb="20"
     >
       <Heading

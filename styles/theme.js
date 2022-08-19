@@ -56,6 +56,7 @@ const styles = {
       scrollBehavior: "smooth",
       fontSize: "16px",
       scrollPaddingTop: "5rem",
+      overflowY: "scroll",
     },
     body: {
       color: mode("gray.900", "gray.100")(props),
