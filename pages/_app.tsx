@@ -17,7 +17,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         </Head>
         <DefaultSeo {...SEO} />
         <Navbar />
-        <Box as="main" pt="24">
+        <Box as="main">
           <Component {...pageProps} />
         </Box>
       </IconContext.Provider>
