@@ -37,20 +37,28 @@ export default function Index({ projects, posts }: IndexProps) {
         mb="20"
       >
         <Hero />
-        <SlideWhenVisible threshold="0.11">
-          <SectionTitle title={t("home_blogHeading")} />{" "}
-        </SlideWhenVisible>
-        <PostsList posts={posts} maxCount={2} />
-        <ViewAllButton text={t("button_viewAllPosts")} url="/blog" />
-        <SlideWhenVisible threshold="0.11">
-          <SectionTitle title={t("home_mainProjectsHeading")} />
-        </SlideWhenVisible>
-        <MainProjects projects={projects} />
-        <SlideWhenVisible threshold="0.11">
-          <SectionTitle title={t("home_secondaryProjectsHeading")} />
-        </SlideWhenVisible>
-        <SecondaryProjects projects={projects} />
-        <ViewAllButton text={t("button_viewAllProjects")} url="/projects" />
+        {posts.length > 0 && (
+          <>
+            <SlideWhenVisible threshold="0.11">
+              <SectionTitle title={t("home_blogHeading")} />{" "}
+            </SlideWhenVisible>
+            <PostsList posts={posts} maxCount={2} />
+            <ViewAllButton text={t("button_viewAllPosts")} url="/blog" />
+          </>
+        )}
+        {projects.length > 0 && (
+          <>
+            <SlideWhenVisible threshold="0.11">
+              <SectionTitle title={t("home_mainProjectsHeading")} />
+            </SlideWhenVisible>
+            <MainProjects projects={projects} />
+            <SlideWhenVisible threshold="0.11">
+              <SectionTitle title={t("home_secondaryProjectsHeading")} />
+            </SlideWhenVisible>
+            <SecondaryProjects projects={projects} />
+            <ViewAllButton text={t("button_viewAllProjects")} url="/projects" />
+          </>
+        )}
       </Flex>
     </>
   );

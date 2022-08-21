@@ -36,7 +36,13 @@ export default function Blog({ posts }: { posts: Post[] }) {
       </Box>
       <Box>
         <VStack spacing="5" w="full" alignItems="stretch">
-          <PostsList posts={posts} maxCount={999} />
+          {posts.length > 0 ? (
+            <PostsList posts={posts} maxCount={999} />
+          ) : (
+            <Text>
+              There&apos;s no blog posts yet. Please check back later 🙃
+            </Text>
+          )}
         </VStack>
       </Box>
     </Flex>
