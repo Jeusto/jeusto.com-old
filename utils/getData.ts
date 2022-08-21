@@ -17,6 +17,10 @@ export async function getAllPosts(): Promise<Post[]> {
     frontmatter.published = new Date(frontmatter.published).valueOf();
     frontmatter.readingTime = readingTime(code).text;
 
+    if (frontmatter.hide) {
+      continue;
+    }
+
     postsMetadata.push(frontmatter);
   }
 

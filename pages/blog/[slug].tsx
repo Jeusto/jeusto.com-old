@@ -13,7 +13,6 @@ import remarkHeadings from "remark-autolink-headings";
 import remarkSlug from "remark-slug";
 import remarkUnwrapImages from "remark-unwrap-images";
 import rehypeExternalLinks from "rehype-external-links";
-import rehypeToc from "rehype-toc";
 
 interface PostProps {
   code: string;
