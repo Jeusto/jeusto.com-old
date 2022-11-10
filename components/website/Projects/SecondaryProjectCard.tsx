@@ -66,7 +66,7 @@ export default function MainProjectCard({
             justifyContent="flex-start"
           >
             <HStack spacing="2">
-              <Heading as="h3" size="lg">
+              <Heading as="h3" fontSize="2xl">
                 {title}
               </Heading>
               <HStack spacing="2">

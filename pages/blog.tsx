@@ -9,8 +9,11 @@ import {
 import PostsList from "@/components/website/Posts/PostsList";
 import { getAllPosts } from "@/utils/getData";
 import { Post } from "@/utils/types";
+import useTranslation from "next-translate/useTranslation";
 
 export default function Blog({ posts }: { posts: Post[] }) {
+  const { t } = useTranslation("common");
+
   return (
     <Flex
       transition="background-color 200ms linear"
@@ -24,9 +27,9 @@ export default function Blog({ posts }: { posts: Post[] }) {
       <Heading
         color={useColorModeValue("teal.500", "teal.200")}
         as="h1"
-        size="2xl"
+        fontSize="4xl"
       >
-        Blog
+        {t("blog_title")}
       </Heading>
       <Box mt="3" mb="5" w="90%">
         <Text>

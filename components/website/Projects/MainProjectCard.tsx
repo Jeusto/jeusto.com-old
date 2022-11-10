@@ -70,7 +70,7 @@ export default function MainProjectCard({
           pt="3"
         >
           <Flex w="100%" justifyContent="space-between" alignItems="center">
-            <Heading as="h3" size="lg">
+            <Heading as="h3" fontSize="2xl">
               {title}
             </Heading>
             <HStack spacing="2">

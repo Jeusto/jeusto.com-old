@@ -8,7 +8,7 @@ export default function SectionTitle({ title }: { title: string }) {
       mt="8"
       mb="5"
       as="h2"
-      size="xl"
+      fontSize="3xl"
     >
       {title}
     </Heading>

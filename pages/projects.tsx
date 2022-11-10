@@ -23,7 +23,7 @@ export default function AllProjects({ projects }: { projects: Project[] }) {
         <Heading
           color={useColorModeValue("teal.500", "teal.200")}
           as="h1"
-          size="2xl"
+          fontSize="4xl"
         >
           {t("projects_title")}
         </Heading>

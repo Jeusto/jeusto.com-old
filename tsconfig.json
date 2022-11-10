@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -20,13 +16,9 @@
     "noImplicitAny": false,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "@types/*": [
-        "/types/*"
-      ]
-    },
+      "@/*": ["./*"],
+      "@types/*": ["/types/*"]
+    }
   },
   "include": [
     "next-env.d.ts",
@@ -34,9 +26,8 @@
     "**/*.tsx",
     "hooks/SlideWhenVisible.tsx",
     "pages/_document.tsx",
-    "pages/api/projects.js"
+    "pages/api/projects.js",
+    "styles/theme.js"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
