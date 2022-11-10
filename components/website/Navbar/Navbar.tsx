@@ -83,10 +83,13 @@ export default function Navbar() {
       w="100%"
       bg={useColorModeValue("gray.50", "gray.850")}
       zIndex={99}
-      boxShadow="sm"
       mb="10"
       borderBottomWidth="1px"
       borderColor={useColorModeValue("gray.200", "gray.800")}
+      transition={"all 150ms ease-in-out"}
+      _hover={{
+        boxShadow: "sm",
+      }}
     >
       <VStack
         flexDirection="row"
@@ -133,6 +136,11 @@ export default function Navbar() {
                 onClick={onClose}
                 href="/projects"
                 name={t("navbar_projects")}
+              />
+              <NavLink
+                onClick={onClose}
+                href="/links"
+                name={t("navbar_links")}
               />
             </HStack>
             <HStack style={{ margin: 0 }}>

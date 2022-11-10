@@ -27,7 +27,7 @@ const CustomLink = ({ url, type, icon }) => {
           borderWidth="1px"
           borderColor={useColorModeValue("gray.200", "gray.800")}
           _hover={{
-            transform: "translateY(-5px)",
+            transform: "translateY(-3px)",
             boxShadow: "lg",
           }}
         >
