@@ -66,15 +66,9 @@ export default function Landing() {
       <Image
         borderRadius="lg"
         transition={"all 150ms ease-in-out"}
-        // filter={"grayscale(100%)"}
         w={{ base: "0", lg: "30%" }}
         borderColor={useColorModeValue("gray.200", "gray.800")}
         transform={"rotate(3deg)"}
-        _hover={{
-          filter: "grayscale(0%)",
-          transform: "rotate(1deg)",
-          boxShadow: "lg",
-        }}
         objectFit={"cover"}
         src={`/images/avatar.png`}
         alt={"Arhun Saday profile picture"}
