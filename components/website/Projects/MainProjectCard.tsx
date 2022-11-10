@@ -10,11 +10,11 @@ import {
   Link,
   AspectRatio,
   useColorModeValue,
+  Image,
 } from "@chakra-ui/react";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import SlideWhenVisible from "@/hooks/SlideWhenVisible";
 import Tags from "@/components/website/Projects/Tags";
-import Image from "next/image";
 
 type CardProps = {
   image: string;
@@ -41,27 +41,28 @@ export default function MainProjectCard({
         overflow="hidden"
         flexDirection="column"
         height="100%"
-        width="full"
         transition={"all 150ms ease-in-out"}
         p="3"
         borderWidth="1px"
         borderColor={useColorModeValue("gray.200", "gray.800")}
         _hover={{
-          transform: "translateY(-5px)",
+          transform: "translateY(-3px)",
           boxShadow: "lg",
         }}
       >
         {image && (
-          <AspectRatio ratio={1920 / 1080}>
-            <Box boxShadow="xs" borderRadius="lg">
+          <Box>
+            <AspectRatio ratio={16 / 9} mb="3">
               <Image
-                layout="fill"
+                boxShadow="xs"
+                borderRadius="lg"
                 objectFit={"cover"}
                 src={`/images/projects/${image}`}
                 alt={"Image for project called: " + title}
+                transition={"all 100ms ease-in-out"}
               ></Image>
-            </Box>
-          </AspectRatio>
+            </AspectRatio>
+          </Box>
         )}
         <VStack
           justifyContent="flex-start"

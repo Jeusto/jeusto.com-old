@@ -44,7 +44,7 @@ export default function MainProjectCard({
         borderColor={useColorModeValue("gray.200", "gray.800")}
         transition={"all 150ms ease-in-out"}
         _hover={{
-          transform: "translateY(-5px)",
+          transform: "translateY(-3px)",
           boxShadow: "lg",
         }}
       >

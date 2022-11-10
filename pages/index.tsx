@@ -9,6 +9,7 @@ import { getAllPosts, getAllProjects } from "@/utils/getData";
 import { Project, Post } from "@/utils/types";
 import dynamic from "next/dynamic";
 import SlideWhenVisible from "@/hooks/SlideWhenVisible";
+import PostCard from "@/components/website/Posts/PostCard";
 
 interface IndexProps {
   projects: Project[];
@@ -31,8 +32,7 @@ export default function Index({ projects, posts }: IndexProps) {
         transition="background-color 200ms linear"
         direction="column"
         m="auto"
-        pr="10"
-        pl="10"
+        px="10"
         maxW="1000px"
         mb="20"
       >
@@ -40,9 +40,18 @@ export default function Index({ projects, posts }: IndexProps) {
         {posts.length > 0 && (
           <>
             <SlideWhenVisible threshold="0.11">
-              <SectionTitle title={t("home_blogHeading")} />{" "}
+              <SectionTitle title={t("home_blogFeaturedHeading")} />{" "}
             </SlideWhenVisible>
-            <PostsList posts={posts} maxCount={2} />
+            {posts
+              .slice(0, 1)
+              .filter((post) => post.isFeatured === true)
+              .map((post: any) => (
+                <PostCard
+                  isFeatured="true"
+                  key={post.slug}
+                  frontmatter={post}
+                />
+              ))}
             <ViewAllButton text={t("button_viewAllPosts")} url="/blog" />
           </>
         )}
@@ -52,6 +61,19 @@ export default function Index({ projects, posts }: IndexProps) {
               <SectionTitle title={t("home_mainProjectsHeading")} />
             </SlideWhenVisible>
             <MainProjects projects={projects} />
+          </>
+        )}
+        {posts.length > 0 && (
+          <>
+            <SlideWhenVisible threshold="0.11">
+              <SectionTitle title={t("home_blogLatestHeading")} />{" "}
+            </SlideWhenVisible>
+            <PostsList posts={posts} maxCount={5} />
+            <ViewAllButton text={t("button_viewAllPosts")} url="/blog" />
+          </>
+        )}
+        {projects.length > 0 && (
+          <>
             <SlideWhenVisible threshold="0.11">
               <SectionTitle title={t("home_secondaryProjectsHeading")} />
             </SlideWhenVisible>
