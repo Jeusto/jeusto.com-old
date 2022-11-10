@@ -11,7 +11,8 @@ import {
   AspectRatio,
   Box,
 } from "@chakra-ui/react";
-import { FiCalendar, FiClock, FiTag } from "react-icons/fi";
+import { BiTimer } from "react-icons/bi";
+import { TbTags, TbCalendarTime } from "react-icons/tb";
 import SlideWhenVisible from "@/hooks/SlideWhenVisible";
 import { createRef } from "react";
 import ReadingProgress from "@/components/website/ReadingProgress";
@@ -38,8 +39,7 @@ export default function BlogLayout({ children, frontmatter }: BlogProps) {
               alignItems="left"
               direction="column"
               m="auto"
-              pr="10"
-              pl="10"
+              px="10"
               maxW="1000px"
             >
               <SlideWhenVisible threshold="0.11">
@@ -53,33 +53,35 @@ export default function BlogLayout({ children, frontmatter }: BlogProps) {
                     justifyContent="space-between"
                     alignItems="center"
                   >
-                    <Heading color={colorModeValue} as="h1" size="2xl">
+                    <Heading color={colorModeValue} as="h1" fontSize="4xl">
                       {frontmatter.title}
                     </Heading>
                   </Flex>
-                  <Wrap spacing="5">
+                  <Wrap fontFamily="heading" spacing="5">
                     <HStack>
-                      <FiCalendar />
+                      <TbCalendarTime />
                       <Text>{frontmatter.published}</Text>
                     </HStack>
                     <HStack>
-                      <FiClock />
+                      <BiTimer />
                       <Text>{frontmatter.readingTime}</Text>
                     </HStack>
                     <HStack>
-                      <FiTag />
-                      <Text>{frontmatter.category}</Text>
+                      <TbTags />
+                      <Text>{frontmatter.tags}</Text>
                     </HStack>
                   </Wrap>
                 </VStack>
-                <AspectRatio my="5" ratio={1920 / 720}>
-                  <Image
-                    boxShadow="xs"
-                    borderRadius="md"
-                    src={`/images/posts/${frontmatter.slug}/thumbnail.png`}
-                    alt=""
-                  ></Image>
-                </AspectRatio>
+                {frontmatter.coverImage && (
+                  <AspectRatio my="5" ratio={1920 / 1080}>
+                    <Image
+                      boxShadow="xs"
+                      borderRadius="md"
+                      src={frontmatter.coverImage}
+                      alt=""
+                    ></Image>
+                  </AspectRatio>
+                )}
                 <Box as="main" className="post">
                   {children}
                 </Box>

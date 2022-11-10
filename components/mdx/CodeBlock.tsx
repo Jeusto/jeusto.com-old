@@ -22,12 +22,12 @@ export default function CodeBlock({ children }: CodeBlockProps) {
   }
 
   return (
-    <Box marginY="5" position="relative">
+    <Box marginX="-5" marginY="5" position="relative">
       <pre ref={preRef}>{children}</pre>
       <Button
         pos="absolute"
-        top="-7"
-        right="0"
+        top="2"
+        right="2"
         onClick={() => {
           copy();
           setIsCopied(true);

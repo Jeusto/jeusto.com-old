@@ -1,11 +1,12 @@
 export interface Post {
-  category: string;
+  tags: string;
   description: string;
-  image: string;
+  coverImage: string;
   published: number;
   slug: string;
   title: string;
   readingTime: object;
+  isFeatured: boolean;
 }
 
 export interface Project {
