@@ -7,12 +7,8 @@ import {
   HStack,
   useColorModeValue,
   Tooltip,
-  AspectRatio,
-  VStack,
-  Flex,
 } from "@chakra-ui/react";
 import { FiGithub, FiMail, FiLinkedin } from "react-icons/fi";
-import SlideWhenVisible from "@/hooks/SlideWhenVisible";
 import useTranslation from "next-translate/useTranslation";
 import { Image } from "@chakra-ui/react";
 
@@ -22,11 +18,7 @@ export default function Landing() {
   return (
     <HStack spacing="5" justifyContent="space-between" alignItems="center">
       <Box w="100%">
-        <Heading
-          color={useColorModeValue("teal.500", "teal.200")}
-          as="h1"
-          fontSize="4xl"
-        >
+        <Heading variant="brand" as="h1" fontSize="4xl">
           {t("hero_name")}
         </Heading>
         <Box mt="5">

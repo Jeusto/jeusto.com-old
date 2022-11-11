@@ -5,13 +5,11 @@ import {
   HStack,
   Text,
   Heading,
-  Button,
   Link,
   useColorModeValue,
   Box,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import { FiArrowRight, FiClock, FiTag } from "react-icons/fi";
 import SlideWhenVisible from "@/hooks/SlideWhenVisible";
 import useTranslation from "next-translate/useTranslation";
 import { BiTimer } from "react-icons/bi";
@@ -70,7 +68,7 @@ export default function PostCard({ frontmatter, isFeatured }: any) {
                 {isFeatured && <Text>{frontmatter.description}</Text>}
                 <Flex w="100%" justifyContent="space-between">
                   <Wrap
-                    color={useColorModeValue("gray.600", "gray.500")}
+                    color={useColorModeValue("teal.400", "teal.500")}
                     fontFamily={"heading"}
                   >
                     <HStack>
@@ -83,18 +81,6 @@ export default function PostCard({ frontmatter, isFeatured }: any) {
                     </HStack>
                   </Wrap>
                 </Flex>
-
-                <Button
-                  placeSelf={"flex-end"}
-                  variant="link"
-                  rightIcon={<FiArrowRight />}
-                  color={useColorModeValue("teal.500", "teal.200")}
-                  _hover={{
-                    textDecoration: "none",
-                  }}
-                >
-                  {t("button_readMore")}
-                </Button>
               </VStack>
             </Flex>
           </Box>

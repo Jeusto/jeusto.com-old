@@ -27,7 +27,7 @@
     "hooks/SlideWhenVisible.tsx",
     "pages/_document.tsx",
     "pages/api/projects.js",
-    "styles/theme.js"
+    "styles/theme.ts"
   ],
   "exclude": ["node_modules"]
 }

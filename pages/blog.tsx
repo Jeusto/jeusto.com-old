@@ -1,11 +1,4 @@
-import {
-  VStack,
-  Flex,
-  Box,
-  Heading,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { VStack, Flex, Box, Heading, Text } from "@chakra-ui/react";
 import PostsList from "@/components/website/Posts/PostsList";
 import { getAllPosts } from "@/utils/getData";
 import { Post } from "@/utils/types";
@@ -24,11 +17,7 @@ export default function Blog({ posts }: { posts: Post[] }) {
       maxW="1000px"
       mb="20"
     >
-      <Heading
-        color={useColorModeValue("teal.500", "teal.200")}
-        as="h1"
-        fontSize="4xl"
-      >
+      <Heading variant="brand" as="h1" fontSize="4xl">
         {t("blog_title")}
       </Heading>
       <Box mt="3" mb="5" w="90%">

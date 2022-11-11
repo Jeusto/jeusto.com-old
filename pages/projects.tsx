@@ -1,6 +1,6 @@
 import MainProjects from "@/components/website/Projects/MainProjects";
 import SecondaryProjects from "@/components/website/Projects/SecondaryProjects";
-import { Flex, useColorModeValue, Heading, Box, Text } from "@chakra-ui/react";
+import { Flex, Heading, Box, Text } from "@chakra-ui/react";
 import SectionTitle from "@/components/website/SectionTitle";
 import useTranslation from "next-translate/useTranslation";
 import { getAllProjects } from "@/utils/getData";
@@ -20,11 +20,7 @@ export default function AllProjects({ projects }: { projects: Project[] }) {
         maxW="1000px"
         mb="20"
       >
-        <Heading
-          color={useColorModeValue("teal.500", "teal.200")}
-          as="h1"
-          fontSize="4xl"
-        >
+        <Heading as="h1" variant="brand" fontSize="4xl">
           {t("projects_title")}
         </Heading>
         <Box mt="3" mb="5" w="90%">
