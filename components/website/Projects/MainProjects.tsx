@@ -11,9 +11,6 @@ export default function MainProjects({ projects }: { projects: Project[] }) {
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} spacing="5">
         {Object.values(projects)
           .filter((project) => project.isSecondary === false)
-          .sort(function (a, b) {
-            return a.order - b.order;
-          })
           .map((project) => (
             <MainProjectCard
               key={project.order}

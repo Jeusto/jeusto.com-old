@@ -37,11 +37,7 @@ export async function getAllProjects(): Promise<Project[]> {
     "utf8"
   );
   projects = JSON.parse(projects);
+  let projectsArray = Object.keys(projects).map((key) => projects[key]);
 
-  let sortedProjects = Object.keys(projects).map((key) => projects[key]);
-  sortedProjects = sortedProjects.sort(
-    (firstEl, secondEl) => secondEl.order - firstEl.order
-  );
-
-  return sortedProjects;
+  return projectsArray;
 }
