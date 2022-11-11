@@ -1,7 +1,6 @@
-import { SimpleGrid, Box, VStack } from "@chakra-ui/layout";
+import { SimpleGrid, Box } from "@chakra-ui/layout";
 import PostCard from "@/components/website/Posts/PostCard";
 import { Post } from "@/utils/types";
-import { Divider, useColorModeValue, Flex } from "@chakra-ui/react";
 
 export default function PostsList({
   posts,

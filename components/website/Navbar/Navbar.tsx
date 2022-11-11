@@ -12,12 +12,13 @@ import {
   Icon,
   useColorMode,
   useColorModeValue,
+  Show,
+  Hide,
 } from "@chakra-ui/react";
 import NextImage from "next/image";
 import NextLink from "next/link";
 import whiteLogo from "@/public/white-logo.svg";
 import darkLogo from "@/public/dark-logo.svg";
-import useMediaQuery from "@/hooks/useMediaQuery";
 import useTranslation from "next-translate/useTranslation";
 import Flag from "@/components/website/Navbar/Flag";
 import { FiMoon, FiSun, FiMenu } from "react-icons/fi";
@@ -25,7 +26,6 @@ import NavLink from "@/components/website/Navbar/NavLink";
 import useSound from "use-sound";
 
 export default function Navbar() {
-  const isLargerThan768 = useMediaQuery(768);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { t, lang } = useTranslation("common");
   const { colorMode, toggleColorMode } = useColorMode();
@@ -113,53 +113,43 @@ export default function Navbar() {
             ></NextImage>
           </NextLink>
         </Box>
-        {!isLargerThan768 && (
-          <>
-            <Icon
-              as={FiMenu}
-              cursor="pointer"
-              w={7}
-              h={7}
-              onClick={() => {
-                isOpen ? onClose() : onOpen();
-              }}
+        <Hide above="md">
+          <Icon
+            as={FiMenu}
+            cursor="pointer"
+            w={7}
+            h={7}
+            onClick={() => {
+              isOpen ? onClose() : onOpen();
+            }}
+          />
+          <MobileNavbar />
+        </Hide>
+        <Show above="md">
+          <HStack style={{ margin: 0 }}>
+            <NavLink onClick={onClose} href="/" name={t("navbar_home")} />
+            <NavLink onClick={onClose} href="/blog" name={t("navbar_blog")} />
+            <NavLink
+              onClick={onClose}
+              href="/projects"
+              name={t("navbar_projects")}
             />
-            <MobileNavbar />
-          </>
-        )}
-        {isLargerThan768 && (
-          <>
-            <HStack style={{ margin: 0 }}>
-              <NavLink onClick={onClose} href="/" name={t("navbar_home")} />
-              <NavLink onClick={onClose} href="/blog" name={t("navbar_blog")} />
-              <NavLink
-                onClick={onClose}
-                href="/projects"
-                name={t("navbar_projects")}
-              />
-              <NavLink
-                onClick={onClose}
-                href="/links"
-                name={t("navbar_links")}
-              />
-            </HStack>
-            <HStack style={{ margin: 0 }}>
-              <IconButton
-                aria-label="Toggle dark mode"
-                onClick={() => {
-                  colorMode === "dark"
-                    ? play({ id: "on" })
-                    : play({ id: "off" });
-                  toggleColorMode();
-                }}
-                borderRadius="lg"
-                variant="ghost"
-                icon={colorMode === "dark" ? <FiMoon /> : <FiSun />}
-              />
-              <Flag onClick={onClose} />
-            </HStack>
-          </>
-        )}
+            <NavLink onClick={onClose} href="/links" name={t("navbar_links")} />
+          </HStack>
+          <HStack style={{ margin: 0 }}>
+            <IconButton
+              aria-label="Toggle dark mode"
+              onClick={() => {
+                colorMode === "dark" ? play({ id: "on" }) : play({ id: "off" });
+                toggleColorMode();
+              }}
+              borderRadius="lg"
+              variant="ghost"
+              icon={colorMode === "dark" ? <FiMoon /> : <FiSun />}
+            />
+            <Flag onClick={onClose} />
+          </HStack>
+        </Show>
       </VStack>
     </Box>
   );
